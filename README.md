@@ -3,7 +3,15 @@
 > A **research project** scaffolded with
 > [cleanvibe](https://github.com/Immanuelle/cleanvibe) `research`.
 
-**Research question:** _(not yet defined — the bootstrap queue's first research step pins this down with you)_
+**Research question:** *How reliably can a large language model fill in missing
+factual statements in Wikidata for a bounded, curated domain — Shinto shrines —
+and does an explicit self-verification pass meaningfully reduce the rate of
+wrong / hallucinated values?* Concretely: hold out a known property value for a
+sampled shrine entity, prompt the model to predict it, and measure precision /
+recall **by property type**, comparing a single predict pass against
+predict-then-self-verify. A successful outcome is a precision/recall table that
+says **which property types are safe to auto-suggest** and **how much a
+verification pass lifts precision**.
 
 ## About
 

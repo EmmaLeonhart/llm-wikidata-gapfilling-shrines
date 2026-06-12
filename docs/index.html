@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>o1</title>
-<meta name="description" content="A cleanvibe research project: _(not yet defined — the bootstrap queue's first research step pins this down with you)_">
+<meta name="description" content="o1 — Can an LLM reliably fill missing Wikidata statements for Shinto shrines, and does self-verification cut hallucination? A cleanvibe research project.">
 <style>
   :root {
     --bg: #f6f2ec;
@@ -138,14 +138,21 @@
 
 <h1>o1</h1>
 <p class="lede">
-  A <strong>cleanvibe research project</strong>. <em>TODO: replace this lede with a
-  one-paragraph plain-language summary of what this project investigates and what
-  it found.</em>
+  Knowledge graphs like Wikidata are full of holes — a shrine with no recorded
+  location, no founding date, no enshrined deity. Large language models know a
+  lot of these facts. This project measures, for one bounded and well-curated
+  domain (<strong>Shinto shrines</strong>), how reliably an LLM can fill those
+  gaps, and whether asking the model to <em>verify its own answer</em> turns
+  guesses into trustworthy suggestions.
 </p>
 
 <div class="question">
   <span class="kicker">Research question</span>
-  _(not yet defined — the bootstrap queue's first research step pins this down with you)_
+  How reliably can a large language model fill in missing factual statements in
+  Wikidata for a bounded domain — Shinto shrines — and does an explicit
+  <strong>self-verification pass</strong> meaningfully reduce the rate of wrong
+  / hallucinated values? Measured as precision / recall by property type,
+  predict-only vs predict-then-verify.
 </div>
 
 <div class="actions">
@@ -176,7 +183,9 @@
 <div class="pillars">
   <div class="pillar">
     <h3>1 &middot; The question</h3>
-    <p>_(not yet defined — the bootstrap queue's first research step pins this down with you)_</p>
+    <p>Can an LLM fill missing Wikidata statements for Shinto shrines at usable
+    precision, and how much does a self-verification pass help? Evaluated by
+    holding out known values and measuring precision/recall per property type.</p>
   </div>
   <div class="pillar">
     <h3>2 &middot; Grounded in the literature</h3>

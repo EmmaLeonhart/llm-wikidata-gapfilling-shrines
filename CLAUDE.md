@@ -7,7 +7,22 @@ This is a **research project** scaffolded by `cleanvibe research`. Unlike a
 investigation: you pose a question, survey the prior literature, run experiments
 or build something to answer it, and publish the findings.
 
-> **Research question:** _(not yet defined — the bootstrap queue's first research step pins this down with you)_
+> **Research question:** How reliably can a large language model fill in missing
+> factual statements in Wikidata for a bounded, curated domain — **Shinto
+> shrines** — and does an explicit **self-verification pass** meaningfully reduce
+> the rate of wrong / hallucinated values? Held-out single-property prediction,
+> precision/recall by property type, predict-only vs predict-then-verify.
+>
+> **In scope:** Wikidata Shinto-shrine entities; a handful of factual property
+> types (e.g. administrative location `P131`, coordinates `P625`, enshrined deity
+> `P1049/P527`-style links, inception `P571`, religion `P140`); held-out
+> evaluation against existing Wikidata values; a self-verification prompt.
+> **Out of scope:** fine-tuning/training models; a production write-bot that edits
+> Wikidata live; multimodal inputs. **Constraints:** Claude API + public Wikidata
+> SPARQL; modest compute; everything reproducible via `scripts/run.py`.
+> **Success:** a precision/recall table by property type for predict-only vs
+> predict+verify, plus a defensible statement of which property types are
+> safe to auto-suggest and how much verification lifts precision.
 
 Like a cleanvibe replication it produces a published, legible report — a themed
 **GitHub Pages site** (`docs/`) plus a transportable PDF — but the content is
