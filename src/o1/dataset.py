@@ -82,6 +82,28 @@ def build_eval_set(
     return instances
 
 
+def bucket_stratified_sample(
+    instances: Iterable[dict[str, Any]], per_pid_bucket: int
+) -> list[dict[str, Any]]:
+    """Deterministically pick up to ``per_pid_bucket`` instances per (property,
+    popularity bucket) cell, so the run sample spans head/torso/tail for every
+    property that reaches them — required to measure the popularity gradient (H2).
+    """
+    cells: dict[tuple, list[dict[str, Any]]] = collections.defaultdict(list)
+    for inst in instances:
+        cells[(inst["target_pid"], inst["popularity_bucket"])].append(inst)
+    out: list[dict[str, Any]] = []
+    for key in sorted(cells):
+        items = sorted(cells[key], key=lambda x: x["id"])
+        if len(items) <= per_pid_bucket:
+            out.extend(items)
+            continue
+        step = len(items) / per_pid_bucket
+        idxs = sorted({int(k * step) for k in range(per_pid_bucket)})
+        out.extend(items[i] for i in idxs)
+    return out
+
+
 def bucket_summary(instances: Iterable[dict[str, Any]]) -> dict[str, dict[str, int]]:
     """Counts of instances per popularity bucket x target property (for reporting)."""
     out: dict[str, dict[str, int]] = collections.defaultdict(

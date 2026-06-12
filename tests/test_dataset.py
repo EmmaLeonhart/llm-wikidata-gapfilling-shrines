@@ -1,4 +1,6 @@
 """Tests for held-out eval-instance construction and stratified sampling."""
+import collections
+
 from o1 import dataset as ds
 from o1 import wikidata as wd
 
@@ -48,6 +50,21 @@ def test_instance_carries_bucket_and_property_label():
     p17_tail = next(i for i in insts if i["id"] == "Q2__P17")
     assert p17_tail["popularity_bucket"] == "tail"
     assert p17_tail["target_property"] == "country"
+
+
+def test_bucket_stratified_sample_covers_cells_and_caps():
+    insts = (
+        [{"id": f"a{i}", "target_pid": "P17", "popularity_bucket": "head"} for i in range(10)]
+        + [{"id": f"b{i}", "target_pid": "P17", "popularity_bucket": "tail"} for i in range(10)]
+        + [{"id": f"c{i}", "target_pid": "P31", "popularity_bucket": "head"} for i in range(2)]
+    )
+    out = ds.bucket_stratified_sample(insts, per_pid_bucket=3)
+    cells = collections.Counter((i["target_pid"], i["popularity_bucket"]) for i in out)
+    assert cells[("P17", "head")] == 3   # capped
+    assert cells[("P17", "tail")] == 3   # capped
+    assert cells[("P31", "head")] == 2   # smaller than cap -> all kept
+    # deterministic
+    assert [i["id"] for i in out] == [i["id"] for i in ds.bucket_stratified_sample(insts, 3)]
 
 
 def test_bucket_summary_counts():

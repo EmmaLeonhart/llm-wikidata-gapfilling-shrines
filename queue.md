@@ -27,20 +27,16 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **Scale the run + popularity gradient (H2).** Re-run with a larger bounded
-   sample (e.g. `O1_PER_PROP=20`) that **includes torso/tail** instances for the
-   four tail-covered properties (`P17`/`P31`/`P131`/`P625`), and report
-   precision/recall **by popularity bucket** for those (the `by_property_bucket`
-   data is already computed — surface it in `FINDINGS.md` + `docs/`). Local Gemma,
-   no API cost; budget the wall-clock. Commit refreshed `FINDINGS.md` + `docs/`.
-
-2. **Figures.** Generate simple precision/recall-by-property and verify-lift
+1. **Figures.** Generate simple precision/recall-by-property and verify-lift
    plots (matplotlib) into `docs/` (e.g. `docs/fig_precision.png`) and embed them
    in the report site. Commit.
 
 When this section drains, refill from `todo.md` item 5 (honesty controls:
 contamination probe + ground-truth-incompleteness spot-check), then the final
-report polish.
+report polish. **Note from R9:** H2 (popularity gradient) was **not** observed
+for the testable near-constant properties — a stronger H2 test would need
+entity-specific properties with tail ground truth, which this domain's tail
+lacks; record that framing in the final report rather than re-running H2.
 
 ---
 
