@@ -146,7 +146,8 @@ def _write_findings(result, labels):
         "",
         f"- Eval set: held-out statements from a stratified sample of Shinto "
         f"shrines (Wikidata). This run scored **{result['n_sample']} instances** "
-        f"(bounded sample, ~{PER_PROPERTY} per property).",
+        f"(bounded sample, ~{round(result['n_sample'] / max(1, len(po['by_property'])))} "
+        f"per property across {len(po['by_property'])} properties).",
         "- Predict-only: model proposes a value or abstains; entity answers "
         "resolved to QIDs via `wbsearchentities`.",
         "- Predict-then-verify: Chain-of-Verification-style independent re-check "
@@ -155,11 +156,29 @@ def _write_findings(result, labels):
         "abstain = abstained / total. Coordinates matched within 0.05°; dates by "
         "year; entities by QID (resolver-miss counts as wrong).",
         "",
-        "## Predict-only — by property",
-        "",
-        sc.to_markdown(po, labels),
-        "",
     ]
+    # Auto headline computed from the data (no hand-tuning).
+    ov = po["overall"]
+    head_bits = [
+        f"On **{result['n_sample']} held-out statements**, predict-only Gemma "
+        f"reached **precision {_f(ov['precision'])} / recall {_f(ov['recall'])}** "
+        f"overall (abstaining on {_f(ov['abstain_rate'])} of gaps)."
+    ]
+    if "verify" in result:
+        vov = result["verify"]["overall"]
+        if ov["precision"] is not None and vov["precision"] is not None:
+            d = vov["precision"] - ov["precision"]
+            verb = "raised" if d > 0 else "lowered" if d < 0 else "did not change"
+            head_bits.append(
+                f"A self-verification pass **{verb}** overall precision "
+                f"({_f(ov['precision'])} → {_f(vov['precision'])}) — "
+                + ("consistent with the literature's warning that naive "
+                   "self-correction can backfire." if d < 0 else
+                   "in line with Chain-of-Verification's intended effect."
+                   if d > 0 else "no net effect at this sample size.")
+            )
+    lines += ["## Headline", "", " ".join(head_bits), "",
+              "## Predict-only — by property", "", sc.to_markdown(po, labels), ""]
     if "verify" in result:
         v = result["verify"]
         lines += [
@@ -178,6 +197,13 @@ def _write_findings(result, labels):
     lines += [
         "## Limitations (carried from the design)",
         "",
+        "- **Entity-property scores conflate model error with QID-resolution "
+        "error.** Answers for entity properties (`P17`/`P131`/`P140`/`P31`/"
+        "`P1435`) are mapped to a QID via `wbsearchentities`; a reasonable label "
+        "(e.g. a city or ward) can resolve to a *different* QID than the specific "
+        "one Wikidata records, counting as wrong. The very low `P131` precision is "
+        "likely partly this, not pure hallucination — a follow-up should audit "
+        "raw answers vs. resolved QIDs.",
         "- **Tail shrines are statement-sparse**, so the popularity gradient is "
         "only measurable for `P17`/`P31`/`P131`/`P625`; date/heritage/religion "
         "get head-bucket coverage only.",
@@ -192,10 +218,12 @@ def _write_findings(result, labels):
         fh.write("\n".join(lines))
 
 
+def _f(x):
+    return "—" if x is None else f"{x:.2f}"
+
+
 def _lift_row(name, m):
-    def f(x):
-        return "—" if x is None else f"{x:.2f}"
-    return f"| {name} | {f(m['precision'])} | {f(m['recall'])} | {f(m['abstain_rate'])} |"
+    return f"| {name} | {_f(m['precision'])} | {_f(m['recall'])} | {_f(m['abstain_rate'])} |"
 
 
 def main(argv):

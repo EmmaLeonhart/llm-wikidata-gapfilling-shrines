@@ -39,11 +39,18 @@ pytest -q                 # run the test suite
 python scripts/run.py all # pipeline entry point (stages wired up in R2-R6)
 ```
 
+The LLM backend is **local Gemma (`gemma3:12b`) via Ollama** (`localhost:11434`)
+— no paid API. `predict`/`verify` stages call it; `sample`/`build`/`score` are
+offline.
+
+**First findings** (bounded run, 42 held-out statements): predict-only Gemma
+fills *country* perfectly (1.00) and *instance-of* reasonably (0.67), abstains on
+most dates/coordinates, and a self-verification pass *lowered* overall precision
+(0.50→0.43). See [`FINDINGS.md`](FINDINGS.md) and the
+[report site](https://emmaleonhart.github.io/llm-wikidata-gapfilling-shrines/).
+
 The research question is set and the literature review is in `literature/`.
-Active experiment steps live in `queue.md` (the measurement spine: Wikidata
-sampler → held-out eval set → predict-only baseline → scoring → first run);
-longer-horizon goals are in `todo.md`. The `predict`/verify stages need an
-`ANTHROPIC_API_KEY` in the environment.
+Active experiment steps live in `queue.md`; longer-horizon goals in `todo.md`.
 
 ## Published report
 
