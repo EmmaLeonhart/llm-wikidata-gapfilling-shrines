@@ -108,6 +108,23 @@ def stage_verify():
     return verified
 
 
+def lenient_entity_scores(predictions, sample):
+    """Per entity-property hierarchy-lenient metrics (live ancestor lookup)."""
+    from o1 import score as sc
+    from o1.wikidata import make_ancestor_lookup, ANCESTOR_PROPERTY_PATH
+    by_id = {i["id"]: i for i in sample}
+    out = {}
+    for pid in ANCESTOR_PROPERTY_PATH:
+        pp = [p for p in predictions if p["target_pid"] == pid]
+        insts_p = [by_id[p["id"]] for p in pp if p["id"] in by_id]
+        if not pp:
+            continue
+        lookup = make_ancestor_lookup(pid)
+        s = sc.score(pp, insts_p, ancestors=lookup)
+        out[pid] = s["by_property"].get(pid)
+    return out
+
+
 def stage_score():
     from o1 import score as sc
     from o1.wikidata import DEFAULT_TARGET_PROPERTIES
@@ -117,6 +134,8 @@ def stage_score():
     sample = [by_id[i] for i in po["sample_ids"] if i in by_id]
     result = {"n_sample": len(sample),
               "predict_only": sc.score(po["predictions"], sample)}
+    print("[score] computing hierarchy-lenient entity scores (Wikidata ancestors)...")
+    result["predict_only_lenient_entity"] = lenient_entity_scores(po["predictions"], sample)
     if (RESULTS / "verify.json").exists():
         vv = _load(RESULTS / "verify.json")
         result["verify"] = sc.score(vv["predictions"], sample)
@@ -179,6 +198,30 @@ def _write_findings(result, labels):
             )
     lines += ["## Headline", "", " ".join(head_bits), "",
               "## Predict-only — by property", "", sc.to_markdown(po, labels), ""]
+
+    # Strict vs hierarchy-lenient for entity properties (the granularity finding).
+    lenient = result.get("predict_only_lenient_entity")
+    if lenient:
+        lines += [
+            "## Entity properties — strict vs hierarchy-lenient",
+            "",
+            "Strict scoring needs the *exact* QID. Hierarchy-lenient also credits an "
+            "answer that is an ancestor/descendant of the recorded entity (e.g. the "
+            "model gives the prefecture when Wikidata records the city). The gap is "
+            "the share of answers that are **right at a different granularity**.",
+            "",
+            "| property | strict precision | lenient precision | strict recall | lenient recall |",
+            "|---|---|---|---|---|",
+        ]
+        for pid, lm in lenient.items():
+            sm = po["by_property"].get(pid)
+            if not sm or not lm:
+                continue
+            lines.append(
+                f"| {labels.get(pid, pid)} (`{pid}`) | {_f(sm['precision'])} | "
+                f"{_f(lm['precision'])} | {_f(sm['recall'])} | {_f(lm['recall'])} |"
+            )
+        lines.append("")
     if "verify" in result:
         v = result["verify"]
         lines += [

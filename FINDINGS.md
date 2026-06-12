@@ -30,6 +30,18 @@ On **42 held-out statements**, predict-only Gemma reached **precision 0.50 / rec
 | coordinate location (`P625`) | 6 | — | 0.00 | 1.00 |
 | **overall** | 42 | 0.50 | 0.33 | 0.33 |
 
+## Entity properties — strict vs hierarchy-lenient
+
+Strict scoring needs the *exact* QID. Hierarchy-lenient also credits an answer that is an ancestor/descendant of the recorded entity (e.g. the model gives the prefecture when Wikidata records the city). The gap is the share of answers that are **right at a different granularity**.
+
+| property | strict precision | lenient precision | strict recall | lenient recall |
+|---|---|---|---|---|
+| located in admin territorial entity (`P131`) | 0.00 | 0.33 | 0.00 | 0.33 |
+| religion or worldview (`P140`) | 0.50 | 1.00 | 0.50 | 1.00 |
+| instance of (`P31`) | 0.67 | 1.00 | 0.67 | 1.00 |
+| country (`P17`) | 1.00 | 1.00 | 1.00 | 1.00 |
+| heritage designation (`P1435`) | 0.00 | 0.00 | 0.00 | 0.00 |
+
 ## Predict-then-verify — by property
 
 | property | n | precision | recall | abstain |
