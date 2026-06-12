@@ -27,16 +27,19 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **First end-to-end predict-only run.** Wire `scripts/run.py` to: load
-   `eval_set` → run predict-only over a modest sample → score → write
-   `results/predict_only.json` + a compact markdown table. **Needs
-   `ANTHROPIC_API_KEY`** — if it is not set in the environment, this is a
-   **documented blocker**: record it in `devlog.md` and STOP at this item (do
-   **not** fabricate numbers — hard rail). If it is set, run on a bounded sample,
-   record the real per-property table, and seed `FINDINGS.md` (question + method +
-   the predict-only table). Commit results + `FINDINGS.md`.
+1. **First end-to-end run (predict-only + verify).** Wire `scripts/run.py` stages:
+   `sample`/`build`/`score` run **offline**; `predict` runs predict-only and
+   `verify` runs predict-then-verify over a bounded sample; `all` chains them.
+   **`predict`/`verify`/`all` need `ANTHROPIC_API_KEY`** — if unset, error cleanly
+   and treat as a **documented blocker** (record in `devlog.md`, STOP, do **not**
+   fabricate numbers — hard rail). If set: run a bounded sample for *both*
+   conditions, write `results/predict_only.json` + `results/verify.json` + the
+   per-property and verify-lift tables, and seed `FINDINGS.md` (question, method,
+   the predict-only table, and the predict-only-vs-verify lift). Commit results +
+   `FINDINGS.md`.
 
-When this section drains, refill from `todo.md` item 3 (verify pipeline) next.
+When this section drains, refill from `todo.md` item 4 (stratified analysis /
+figures) and item 5 (honesty controls), then the report.
 
 ---
 

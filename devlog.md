@@ -188,3 +188,20 @@ Added `tests/test_score.py` (9 tests). **35 tests pass.** Offline wiring
 check on the real `eval_set.json` (dummy all-abstain client): 505/505
 predictions joined, 0 unmatched, all 7 properties + 3 buckets group
 correctly — confirms the join before any live run.
+
+## 2026-06-11 — R6: verify pipeline (predict-then-verify)
+
+Promoted `todo.md` item 3 because the only remaining queue item (the live
+run) is blocked on `ANTHROPIC_API_KEY` — but the verify *code* is unblocked
+and offline-testable, exactly like R4. `src/o1/verify.py` implements the
+Chain-of-Verification independence principle: `build_verify_prompt`
+explicitly tells the model **not to assume the proposal is right** and to
+re-derive the fact, then decide KEEP / REVISE / WITHDRAW with a confidence.
+`verify_prediction` returns a **prediction-shaped record** (so `score.score`
+runs on it unchanged) plus a `verify` block and a `pre_verify` snapshot for
+audit; WITHDRAW → abstain, REVISE → re-normalized value (unparseable
+revision → withdraw rather than keep an untypable value), and an
+already-abstained prediction is skipped **without calling the client**.
+Added `tests/test_verify.py` (9 tests incl. a cross-module check that
+verified output scores correctly). **44 tests pass.** Live run stays gated
+on the API key (queue item 1 / task R7).
