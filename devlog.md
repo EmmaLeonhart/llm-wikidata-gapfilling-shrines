@@ -96,3 +96,27 @@ pinned. Crons were already running from bootstrap step 1, so no kill/start
 front item. Bootstrap is done; the project now executes real experiment
 work. Noted main risk: R6 needs `ANTHROPIC_API_KEY` — a documented blocker
 if unset, never faked.
+
+## 2026-06-11 — Pages workflow fixed (manual enablement needed)
+
+The first `pages` run **failed**: `actions/configure-pages@v5` with
+`enablement: true` errored *"Create Pages site failed — Resource not
+accessible by integration"*. The template's claim that Pages auto-enables
+with no manual step did **not** hold for a fresh repo — the workflow's
+default `GITHUB_TOKEN` lacks permission to create the Pages site. Fixed by
+enabling Pages once via the API as the authenticated user:
+`gh api -X POST repos/<owner>/<repo>/pages -f build_type=workflow`, then
+re-running. CI is now green; site live at
+<https://emmaleonhart.github.io/llm-wikidata-gapfilling-shrines/> (HTTP
+200). *(Worth feeding back to the cleanvibe `pages.yml` template.)*
+
+## 2026-06-11 — R1: project skeleton + test/CI harness
+
+Built the package skeleton: `src/o1/__init__.py` (src-layout),
+`scripts/run.py` (stub entry point with stages sample/build/predict/score/
+all), `requirements.txt` (requests, anthropic, pytest), `pyproject.toml`
+(pytest `pythonpath=["src"]` so `import o1` works with no editable
+install — sidesteps the known Documents/Github namespace-shadow quirk),
+`tests/test_smoke.py` (3 tests: version + entry point runs + rejects bad
+stage), and `.github/workflows/ci.yml` (pytest on push/PR). Updated the
+README quickstart. **3 tests pass locally**; CI confirmed below.
