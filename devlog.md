@@ -205,3 +205,30 @@ already-abstained prediction is skipped **without calling the client**.
 Added `tests/test_verify.py` (9 tests incl. a cross-module check that
 verified output scores correctly). **44 tests pass.** Live run stays gated
 on the API key (queue item 1 / task R7).
+
+## 2026-06-12 — Backend switched to local Gemma; R7 first end-to-end run
+
+**User correction:** never use the Anthropic API (cost) — the model is **local
+Gemma (`gemma3:12b`) via Ollama**. Saved to global memory
+(`user-llm-is-local-gemma-not-anthropic`). Replaced `make_anthropic_client`
+with `make_ollama_client` (HTTP `/api/generate`, temp 0), dropped the
+`anthropic` dep, wired `scripts/run.py` stages + a `FINDINGS.md` writer.
+Improved `wikidata_resolver` to prefer an exact label match
+(`pick_resolver_hit`, +1 test). **45 tests pass; CI green.**
+
+**First real results** (bounded run, `O1_PER_PROP=6`, **42 held-out
+statements**, local Gemma): predict-only **precision 0.50 / recall 0.33**
+overall. By property — `P17` country **1.00/1.00**, `P31` instance-of
+0.67/0.67, `P140` religion 0.50, `P571` inception 1.00 precision but 0.17
+recall (83% abstain), `P625` coordinates fully abstained, `P131` 0.00 and
+`P1435` 0.00. **Self-verification HURT** overall precision (0.50 → 0.43) —
+consistent with the literature's self-correction-backfire caveat (B4).
+Seeded `FINDINGS.md` (with auto headline) + updated `docs/` report + README.
+Flagged honestly: `P131`'s zero is likely partly a QID-resolution artifact
+(plausible label → different QID), not pure hallucination — queued as the
+next item (R8). Note: `results/` is gitignored (regenerable run output);
+`FINDINGS.md` is the committed artifact.
+
+Refilled the queue from `todo.md`: R8 (audit/fix the QID-resolution
+artifact), R9 (scale the run + popularity gradient H2), R10 (figures);
+mirrored to the task tool. R7 deleted from queue.

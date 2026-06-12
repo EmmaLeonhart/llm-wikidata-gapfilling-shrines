@@ -199,15 +199,43 @@
     </p>
   </div>
   <div class="pillar">
-    <h3>3 &middot; The finding</h3>
-    <p>TODO: one line on the headline result, once there is one.</p>
+    <h3>3 &middot; The finding (first bounded run)</h3>
+    <p>
+      Local Gemma fills <strong>country perfectly (1.00)</strong> and
+      <em>instance-of</em> reasonably (0.67), but abstains on most dates and all
+      coordinates. Overall predict-only precision was 0.50 / recall 0.33 on 42
+      held-out statements — and a self-verification pass <strong>lowered</strong>
+      precision (0.50&rarr;0.43), matching the literature's warning that naive
+      self-correction can backfire.
+    </p>
   </div>
 </div>
 
-<h2 id="findings">Findings</h2>
+<h2 id="findings">Findings (first bounded run)</h2>
 <p>
-  <em>TODO: write the findings here (or render them from <code>FINDINGS.md</code>).
-  Until results exist, this project is <strong>in progress</strong>.</em>
+  Backend: <strong>local Gemma <code>gemma3:12b</code></strong> (Ollama,
+  temperature 0 — no paid API). A bounded sample of <strong>42 held-out
+  statements</strong> (~6 per property). Full detail and limitations in
+  <a href="https://github.com/EmmaLeonhart/llm-wikidata-gapfilling-shrines/blob/main/FINDINGS.md"><code>FINDINGS.md</code></a>.
+</p>
+<table>
+  <tr><th>property</th><th>precision</th><th>recall</th><th>abstain</th></tr>
+  <tr><td>country (P17)</td><td>1.00</td><td>1.00</td><td>0.00</td></tr>
+  <tr><td>instance of (P31)</td><td>0.67</td><td>0.67</td><td>0.00</td></tr>
+  <tr><td>religion (P140)</td><td>0.50</td><td>0.50</td><td>0.00</td></tr>
+  <tr><td>inception date (P571)</td><td>1.00</td><td>0.17</td><td>0.83</td></tr>
+  <tr><td>admin location (P131)</td><td>0.00*</td><td>0.00*</td><td>0.00</td></tr>
+  <tr><td>heritage (P1435)</td><td>0.00</td><td>0.00</td><td>0.50</td></tr>
+  <tr><td>coordinates (P625)</td><td>&mdash;</td><td>0.00</td><td>1.00</td></tr>
+  <tr><td><strong>overall</strong></td><td><strong>0.50</strong></td><td><strong>0.33</strong></td><td><strong>0.33</strong></td></tr>
+</table>
+<p>
+  <strong>Self-verification hurt:</strong> predict-then-verify lowered overall
+  precision 0.50&rarr;0.43 — consistent with prior findings that naive
+  self-correction can add errors. <small>*P131's zero is likely partly a
+  QID-resolution artifact (a plausible place-name resolving to a different
+  Wikidata item than the recorded one), not pure hallucination — flagged for
+  audit. This is a small, indicative sample, not a final result.</small>
 </p>
 
 <footer>
