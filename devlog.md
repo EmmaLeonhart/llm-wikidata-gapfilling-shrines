@@ -173,3 +173,18 @@ Real backends (`make_anthropic_client`, `wikidata_resolver`) are lazy and
 only built at run time (R6). An unparseable typed answer becomes an abstain
 but **keeps `raw_answer` for audit** — never silently dropped. Added
 `tests/test_predict.py` (10 tests). **26 tests pass.**
+
+## 2026-06-11 — R5: scoring + metrics
+
+`src/o1/score.py` — type-aware matching: entities by QID (`match_entity`;
+resolver-None counts as *wrong*, a documented precision-lowering choice),
+dates by extracted year (`extract_year` handles Wikidata `+1879-..`, bare
+years, and BCE negatives), coordinates within a 0.05° tolerance
+(`match_coordinate`), strings by normalized equality. `classify` →
+correct/wrong/abstain; `score` aggregates **precision (correct/answered),
+recall (correct/total), abstain_rate** overall, by property, and by
+property×popularity-bucket; `to_markdown` renders the by-property table.
+Added `tests/test_score.py` (9 tests). **35 tests pass.** Offline wiring
+check on the real `eval_set.json` (dummy all-abstain client): 505/505
+predictions joined, 0 unmatched, all 7 properties + 3 buckets group
+correctly — confirms the join before any live run.

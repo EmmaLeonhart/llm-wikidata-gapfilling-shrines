@@ -27,12 +27,7 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **Scoring + metrics.** `src/o1/score.py`: match predicted vs held-out value
-   (QID / date / coordinate / fuzzy-label normalization), compute **precision,
-   recall, and abstention rate per property type and per popularity bucket**.
-   Tests on hand-built cases (exact match, near-miss, abstain). Commit.
-
-2. **First end-to-end predict-only run.** Wire `scripts/run.py` to: load
+1. **First end-to-end predict-only run.** Wire `scripts/run.py` to: load
    `eval_set` → run predict-only over a modest sample → score → write
    `results/predict_only.json` + a compact markdown table. **Needs
    `ANTHROPIC_API_KEY`** — if it is not set in the environment, this is a
