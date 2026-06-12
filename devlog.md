@@ -315,3 +315,19 @@ controls` section in the `FINDINGS.md` writer (survives regeneration):
 Regenerated `FINDINGS.md` deterministically from the saved `scores.json`
 (no re-fetch, so the committed n=92 lenient numbers stay stable). **52 tests
 pass.** R11 deleted from queue; only R12 (conclusions + polish) remains.
+
+## 2026-06-12 — R12: conclusions + report polish (spine complete)
+
+Baked a `## Conclusions` decision table into the `FINDINGS.md` writer
+answering the research question — per-property verdicts (country/instance-of/
+religion **SAFE**; admin-location **PARTIAL**; inception **RARE**; heritage/
+coordinates **NO**) plus three takeaways (verify hurt; no popularity/
+memorization effect; granularity is the real story). Text verdicts (not
+emoji) so the pandoc PDF stays clean. Mirrored a "Bottom line" decision
+table into `docs/index.html`. Regenerated `FINDINGS.md` deterministically
+from saved `scores.json`. **52 tests pass.**
+
+**First-session stop condition reached:** the research question has a
+defensible, published answer; `FINDINGS.md` + the `docs/` report + `README`
+reflect it; `queue.md` is empty of concrete work; CI + Pages green. Only
+abstract stretch goals remain in `todo.md`. Handing back to the user.

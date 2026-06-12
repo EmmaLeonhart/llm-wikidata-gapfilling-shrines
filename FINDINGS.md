@@ -17,6 +17,28 @@ How reliably can a local LLM fill missing Wikidata statements for Shinto shrines
 
 On **92 held-out statements**, predict-only Gemma reached **precision 0.58 / recall 0.39** overall (abstaining on 0.33 of gaps). A self-verification pass **lowered** overall precision (0.58 → 0.55) — consistent with the literature's warning that naive self-correction can backfire.
 
+## Conclusions — which shrine properties can a local LLM safely auto-suggest?
+
+Granularity-aware precision is the relevant number for a maintainer (crediting a correct coarser answer). Verdicts from the n=92 run:
+
+| property | granularity-aware precision | verdict |
+|---|---|---|
+| country (`P17`) | 0.94 | **SAFE** — auto-suggest |
+| instance of (`P31`) | 1.00 | **SAFE** — auto-suggest (general type) |
+| religion (`P140`) | 1.00 | **SAFE** — auto-suggest "Shinto"; not a specific sect |
+| admin location (`P131`) | 0.62 | **PARTIAL** — prefecture-level only; human-verify the city/ward |
+| inception (`P571`) | 1.00 prec / 0.14 recall | **RARE** — trust its few confident dates; expect little coverage |
+| heritage (`P1435`) | 0.00 | **NO** — genuine failure |
+| coordinates (`P625`) | — (100% abstain) | **NO** — the model declines |
+
+**Answering the question:** a local LLM (Gemma `gemma3:12b`) is a useful gap-filler for **categorical / near-constant** shrine facts when credited at the right granularity, and it **appropriately abstains** on specific values (dates, coordinates) rather than hallucinating — so its *errors* are rare, but so is its *coverage* of the hard fields. Three takeaways:
+
+1. **Self-verification did not help — it hurt** (precision 0.58→0.55 at n=92, replicating the n=42 result). Do not add a naive verify pass.
+2. **Popularity didn't matter and there is no memorization signal** (flat/again-better on the no-Wikipedia tail) — the model leans on structural priors ("a shrine is in Japan, is Shinto, sits in *some* region"), not entity-specific recall.
+3. **Granularity is the real story for entity properties**: strict exact-QID scoring badly understates a model that is reliably right at a coarser level.
+
+*Scope: one curated domain, a 12B local model, n=92 — indicative, not a settled benchmark. The pipeline (`scripts/run.py`) reproduces every number.*
+
 ## Predict-only — by property
 
 | property | n | precision | recall | abstain |

@@ -27,16 +27,11 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **Conclusions + report polish.** Bake a `## Conclusions` section into the
-   `FINDINGS.md` writer that **answers the research question**: a decision table
-   of which shrine properties a local LLM can safely auto-suggest (country,
-   instance-of, religion — high precision, esp. granularity-aware), which to
-   leave (heritage, coordinates), and the headline that **self-verification
-   hurt**. Mirror the conclusions into `docs/index.html`; final consistency pass
-   on README/devlog. **Carry the R9 note:** frame H2's negative result honestly
-   (no gradient because the testable properties are near-constant; a real H2 test
-   needs entity-specific tail-covered properties this domain lacks) rather than
-   re-running it. Commit; confirm CI + Pages green.
+*The first-session spine is complete — the research question has a defensible,
+published answer (see `FINDINGS.md` § Conclusions and the `docs/` report). The
+queue is empty of concrete work; only abstract stretch goals remain in `todo.md`
+(generalize to a second domain, compare model tiers, a QuickStatements export).
+Per the stop condition, the session hands back here.*
 
 ---
 
