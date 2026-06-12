@@ -295,3 +295,23 @@ keeps it offline-testable. Generated `docs/fig_precision.png`,
 embedded them in the report site. matplotlib added to requirements.
 **52 tests pass.** Refilled queue from `todo.md` item 5: R11 (honesty
 controls) + R12 (conclusions/report polish); mirrored to tasks. R10 deleted.
+
+## 2026-06-12 — R11: honesty controls
+
+Two probes on the n=92 predict-only run, baked as a static `## Honesty
+controls` section in the `FINDINGS.md` writer (survives regeneration):
+- **Contamination:** strict correctness was **0.71 on the no-Wikipedia tail
+  (sitelinks=0)** vs **0.53 on has-Wikipedia** entities — the *opposite* of
+  a memorization signal. Noted the property-mix confound (tail = all
+  categorical props) and that the per-property R9 gradient is the cleaner
+  evidence; either way no head→tail decay.
+- **Ground-truth incompleteness:** spot-checked 5 `P131` "wrong" cases
+  against live Wikidata labels → **4 granularity-mismatch** (prefecture vs
+  recorded ward/city), **1 genuine error** (Kanagawa vs Kasukabe/Saitama),
+  **0 Wikidata-gaps**. So strict `P131`≈0 is mostly granularity, not
+  hallucination, and precision is not materially a lower bound from Wikidata
+  incompleteness in this sample.
+
+Regenerated `FINDINGS.md` deterministically from the saved `scores.json`
+(no re-fetch, so the committed n=92 lenient numbers stay stable). **52 tests
+pass.** R11 deleted from queue; only R12 (conclusions + polish) remains.

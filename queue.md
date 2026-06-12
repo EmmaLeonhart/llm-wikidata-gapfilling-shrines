@@ -27,21 +27,7 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **Honesty controls (todo item 5).** Two probes, written into a
-   `## Honesty controls` section (static prose) of the `FINDINGS.md` writer in
-   `scripts/run.py` so they survive regeneration:
-   (a) **Contamination** — the H2 result already bears on this: precision did
-   *not* fall on the no-Wikipedia tail (it was flat/better), which argues
-   *against* heavy memorization for these near-constant properties. State that,
-   and add a short `scripts/`-or-inline check correlating per-instance
-   correctness with `sitelinks>0` to back it numerically.
-   (b) **Ground-truth incompleteness** — audit ~6 entity-property answers scored
-   *wrong* against the live Wikidata/Wikipedia source and classify each as
-   true-hallucination vs granularity-mismatch vs Wikidata-gap (a correct fact
-   Wikidata lacks). Report the counts; precision is a lower bound by exactly the
-   Wikidata-gap share. Commit.
-
-2. **Conclusions + report polish.** Bake a `## Conclusions` section into the
+1. **Conclusions + report polish.** Bake a `## Conclusions` section into the
    `FINDINGS.md` writer that **answers the research question**: a decision table
    of which shrine properties a local LLM can safely auto-suggest (country,
    instance-of, religion — high precision, esp. granularity-aware), which to
