@@ -12,15 +12,64 @@ See `CLAUDE.md` § "Workflow Rules" and § "Research workflow" for how this file
 
 ---
 
-## Active — First-session bootstrap (research)
+## Active — Build the measurement spine (todo items 1, 2, 4)
 
-Work these top to bottom. **Delete each item from this file in the same commit that completes it, and append a dated entry to `devlog.md`.** Push after every step. When this whole section is gone, the project has finished bootstrap and the queue is ready to be repopulated with the real research/experiment work (see the final item).
+Concrete, ordered steps decomposed from `todo.md`: the **evaluation dataset**,
+the **predict-only baseline**, and **scoring** — the spine that produces the
+first real precision/recall numbers. The verify pipeline (todo 3), full
+stratified analysis/figures, honesty controls (todo 5), and report polish are
+**later refills** — pull them from `todo.md` as this section drains.
 
-1. **Go live: create a PUBLIC GitHub repo and push.** Public is required for free GitHub Pages. `gh repo create --public --source=. --push`. The `pages.yml` workflow **auto-enables Pages itself** (via `actions/configure-pages` with `enablement: true`) — there is no manual Settings toggle to do; just confirm the repo is public and CI (`.github/workflows/`) is wired, and on push `docs/` (the report site) + the built PDF deploy. From here every commit pushes and Pages/CI build as you go.
+**Cron status:** the three crons are **already running** (started at bootstrap
+step 1 of this session and never killed). This is a continuation, not a
+planning-burst re-fill, so there is no kill/start front item — the pinned
+`## Always last` tail just *ensures* they are still up. Work top to bottom;
+**delete each item in the same commit that completes it + append a dated
+`devlog.md` entry**, push, let CI run.
 
-2. **Replace this bootstrap queue with the real research queue.** Pull the first item(s) from `todo.md` and decompose them into a concrete, ordered list of experiment / implementation tasks under a new `## Active` section (deleting this bootstrap section as part of the same edit). Mirror into the task tool. **Keep the `## Always last` section pinned at the very bottom.** The real queue's FIRST work item should **start the three crons** — unless this is a mid-session large-scale re-fill while they are already running, in which case the first item is instead to **kill them** (the pinned tail restarts them). Commit the new queue.
+1. **Project skeleton + test/CI harness.** Create the `src/o1/` package
+   (`__init__.py`), a `scripts/run.py` entry stub, `requirements.txt` (`requests`,
+   `anthropic`, `pytest`), a `tests/` dir with one trivial passing test, and
+   `.github/workflows/ci.yml` running `pytest` on push/PR. Update the README
+   quickstart. Commit, push, **confirm CI (ci.yml) goes green** before moving on.
 
-3. **Work the queue until the stop condition.** Pull the top item, do it, **delete it from `queue.md` AND append a dated entry to `devlog.md`** in the same commit, push, let CI run. Build under `src/`, run via `scripts/run.py`, capture metrics to `results/`, and keep `FINDINGS.md` + the themed `docs/` report current as results land. When `queue.md` empties, refill from `todo.md`. **Stop** when: the research question has a defensible answer (or a clearly reported partial result), `FINDINGS.md` and the published `docs/` report reflect it, `queue.md` is empty, and the repo is online with green CI/Pages. At that point, hand back to the user.
+2. **Wikidata SPARQL sampler.** `src/o1/wikidata.py`: query Shinto-shrine entities
+   (`P31` → Shinto shrine `Q845945` and relevant subtypes) via the public SPARQL
+   endpoint, returning label, description, **sitelink count (popularity proxy)**,
+   and each entity's statements for the candidate target properties. Unit-test the
+   result-parsing / normalization on a saved mock JSON payload (no live call in
+   tests). Save a raw sample to `data_lake/shrines_raw.json`. Commit.
+
+3. **Target-property set + held-out eval builder.** Fix the target property list
+   (candidates: `P17` country, `P131` admin location, `P140` religion, `P31`
+   instance-of, `P571` inception, `P625` coordinates, and an enshrined-deity link
+   if reliably present) and **document it in `CLAUDE.md`**. `src/o1/dataset.py`:
+   from the raw shrines, build eval instances = *(entity context with the target
+   property held out, the true held-out value)*, stratified by property type and
+   popularity bucket. Save `data_lake/eval_set.json`. Tests cover the holdout +
+   stratification logic. Commit.
+
+4. **Predict-only pipeline.** `src/o1/predict.py`: given an instance's context,
+   prompt Claude to **propose a value or explicitly abstain**, with per-property
+   templates; parse + normalize the answer (QID resolution / date / coordinate /
+   string forms). **Inject the model client** so parsing/normalization is unit-
+   tested with a fake client — no live API calls in tests. Commit.
+
+5. **Scoring + metrics.** `src/o1/score.py`: match predicted vs held-out value
+   (QID / date / coordinate / fuzzy-label normalization), compute **precision,
+   recall, and abstention rate per property type and per popularity bucket**.
+   Tests on hand-built cases (exact match, near-miss, abstain). Commit.
+
+6. **First end-to-end predict-only run.** Wire `scripts/run.py` to: load
+   `eval_set` → run predict-only over a modest sample → score → write
+   `results/predict_only.json` + a compact markdown table. **Needs
+   `ANTHROPIC_API_KEY`** — if it is not set in the environment, this is a
+   **documented blocker**: record it in `devlog.md` and STOP at this item (do
+   **not** fabricate numbers — hard rail). If it is set, run on a bounded sample,
+   record the real per-property table, and seed `FINDINGS.md` (question + method +
+   the predict-only table). Commit results + `FINDINGS.md`.
+
+When this section drains, refill from `todo.md` item 3 (verify pipeline) next.
 
 ---
 
