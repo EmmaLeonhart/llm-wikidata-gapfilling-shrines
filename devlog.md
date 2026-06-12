@@ -75,3 +75,24 @@ build/experiment destinations (eval dataset → prediction pipeline →
 verification pipeline → scoring/analysis → honesty controls for
 contamination + ground-truth incompleteness), the report shape, and
 stretch horizons. Committed on its own.
+
+## 2026-06-11 — Bootstrap 6: went live (public repo)
+
+Created the PUBLIC GitHub repo
+**EmmaLeonhart/llm-wikidata-gapfilling-shrines** (descriptive name per
+user; local folder stays `o1`) and pushed `main`. The `pages.yml` workflow
+auto-enables Pages and deploys `docs/` + builds `report.pdf` from
+`FINDINGS.md` once it exists. From here every commit pushes and CI/Pages
+build. Repo: <https://github.com/EmmaLeonhart/llm-wikidata-gapfilling-shrines>
+
+## 2026-06-11 — Bootstrap complete: real research queue installed
+
+Replaced the bootstrap `## Active` section with the real research queue —
+six concrete steps (R1 skeleton+CI, R2 Wikidata sampler, R3 held-out eval
+builder, R4 predict-only pipeline, R5 scoring, R6 first end-to-end run)
+decomposed from `todo.md` items 1/2/4 (the measurement spine). Mirrored to
+the task tool (tasks #6–#11). The `## Always last` cron/summary tail stays
+pinned. Crons were already running from bootstrap step 1, so no kill/start
+front item. Bootstrap is done; the project now executes real experiment
+work. Noted main risk: R6 needs `ANTHROPIC_API_KEY` — a documented blocker
+if unset, never faked.
