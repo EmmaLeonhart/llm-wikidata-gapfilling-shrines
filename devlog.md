@@ -136,3 +136,27 @@ P625 60/60, P571 47/60, P1435 51/60, P140 32/60. **Known limitation (carried
 to R3):** `sample_shrines` orders by sitelinks DESC, so this sample is
 head-only (20–68 sitelinks); the popularity gradient (H2) needs torso/tail
 sampling, noted in the R3 queue item.
+
+## 2026-06-11 — R3: target-property set + held-out eval builder
+
+Measured the full population: **30,913** Shinto shrines; sitelink
+distribution tail (0) ~76% / torso (1–5) ~23% / head (6+) ~0.7%. Set
+popularity buckets head≥6 / torso 1–5 / tail 0 and added stratified
+sampling to `wikidata.py` (`parse_popularity_rows`, `stratified_sample`
+[deterministic, no RNG], `sample_shrines_stratified`). Built
+`src/o1/dataset.py` (`build_eval_set`, `instance_context`,
+`bucket_summary`). Fixed the 7-property target set and documented it +
+buckets in `CLAUDE.md`.
+
+Built the real eval set: **120 entities (40/bucket, seed=0) → 505 held-out
+instances**, saved to `data_lake/shrines_stratified.json` +
+`data_lake/eval_set.json`. Added `tests/test_dataset.py` (10 tests:
+holdout removal, bucket assignment, deterministic stratified sample, etc.)
+— **16 tests pass.**
+
+**Finding already surfaced:** tail shrines are statement-sparse — only
+`P31`/`P17`/`P131`/`P625` reach the tail; `P571`/`P1435`/`P140` are
+head-concentrated. So **H2 (popularity gradient) is only measurable for
+country / instance-of / admin-location / coordinates**; date/heritage/
+religion get head-bucket precision only. Logged as a limitation in
+`CLAUDE.md` to carry into `FINDINGS.md`.
