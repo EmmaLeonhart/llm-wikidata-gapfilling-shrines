@@ -27,11 +27,15 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-*The first-session spine is complete — the research question has a defensible,
-published answer (see `FINDINGS.md` § Conclusions and the `docs/` report). The
-queue is empty of concrete work; only abstract stretch goals remain in `todo.md`
-(generalize to a second domain, compare model tiers, a QuickStatements export).
-Per the stop condition, the session hands back here.*
+The spine is complete and published, and the one concretely-bounded stretch goal
+(cross-model check) is done — the headline pattern **generalizes** (Gemma ≈
+Llama3.1). The queue is again empty of concrete work.
+
+*Remaining `todo.md` stretch goals are **product decisions awaiting user
+direction**, not auto-promotable: (1) generalize to a second curated domain —
+needs a domain choice; (2) a QuickStatements export — touches the live
+Wikidata-editing workflow. Until the user picks one, work-loop ticks report
+"nothing actionable".*
 
 ---
 

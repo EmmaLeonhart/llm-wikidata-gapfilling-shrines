@@ -331,3 +331,22 @@ from saved `scores.json`. **52 tests pass.**
 defensible, published answer; `FINDINGS.md` + the `docs/` report + `README`
 reflect it; `queue.md` is empty of concrete work; CI + Pages green. Only
 abstract stretch goals remain in `todo.md`. Handing back to the user.
+
+## 2026-06-12 — R13: cross-model check — the finding generalizes
+
+Promoted the one concretely-bounded stretch goal (`todo.md` "compare model
+tiers"). Parameterized `scripts/run.py` with `O1_MODEL` (model-suffixed
+result files via `predict.model_tag`; `FINDINGS.md` regenerates only for the
+canonical `gemma3:12b`) and added a `compare` stage writing
+`MODEL_COMPARISON.md`. +1 test (`model_tag`). **53 tests pass.**
+
+Ran predict-only + score on **`llama3.1:8b`** over the *same* 92-instance
+sample. Result: **per-property precision is essentially identical to Gemma**
+— country 0.94, instance-of 0.83, religion 0.50, inception 1.00, admin/
+heritage 0.00, coordinates abstained (overall 0.58 Gemma vs 0.64 Llama).
+**The headline pattern is model-invariant** — categorical facts recallable,
+specifics not — so it's a property of the task, not of one model. Linked
+`MODEL_COMPARISON.md` from `docs/`. `results/` stays gitignored (the
+suffixed per-model JSON is regenerable); `MODEL_COMPARISON.md` is the
+committed artifact. R13 deleted from queue; the two remaining stretch goals
+are product decisions awaiting user direction.

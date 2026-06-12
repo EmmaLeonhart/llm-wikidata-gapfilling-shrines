@@ -288,6 +288,18 @@
 </p>
 <img src="fig_lenient.png" alt="Strict vs hierarchy-lenient precision for entity properties">
 
+<h3>Does it generalize beyond Gemma?</h3>
+<p>
+  Re-running predict-only on a different local model family —
+  <code>llama3.1:8b</code> — over the same 92-instance sample gives
+  <strong>nearly identical per-property precision</strong> (country 0.94,
+  instance-of 0.83, religion 0.50, heritage/admin-strict 0.00, coordinates
+  abstained; overall 0.58 vs 0.64). The pattern is a property of the
+  <em>task</em> — categorical facts are recallable, specifics are not — not a
+  quirk of one model. Full table:
+  <a href="https://github.com/EmmaLeonhart/llm-wikidata-gapfilling-shrines/blob/main/MODEL_COMPARISON.md"><code>MODEL_COMPARISON.md</code></a>.
+</p>
+
 <footer>
   <p>
     Scaffolded with <a href="https://github.com/Immanuelle/cleanvibe">cleanvibe</a>

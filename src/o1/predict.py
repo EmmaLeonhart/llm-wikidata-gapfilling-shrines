@@ -165,6 +165,11 @@ def predict_all(
 # Real client / resolver (constructed only at run time; not used in tests)
 # --------------------------------------------------------------------------
 
+def model_tag(model: str) -> str:
+    """Filename-safe tag for a model id, e.g. 'llama3.1:8b' -> 'llama3_1_8b'."""
+    return model.replace(":", "_").replace(".", "_").replace("/", "_")
+
+
 def make_ollama_client(
     model: str = "gemma3:12b",
     host: str = "http://localhost:11434",

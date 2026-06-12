@@ -95,6 +95,12 @@ def test_unparseable_typed_answer_becomes_abstain_but_keeps_raw():
     assert pred["raw_answer"] == "I really don't know"
 
 
+def test_model_tag_is_filename_safe():
+    assert pr.model_tag("llama3.1:8b") == "llama3_1_8b"
+    assert pr.model_tag("gemma3:12b") == "gemma3_12b"
+    assert pr.model_tag("deepseek-r1:8b") == "deepseek-r1_8b"
+
+
 def test_pick_resolver_hit_prefers_exact_label():
     hits = [
         {"id": "Q1203698", "label": "Shinto music"},
