@@ -48,3 +48,20 @@ predict-then-verify. Scope, constraints, and success criteria written into
 `README.md`, `CLAUDE.md` (`> Research question` block), and
 `docs/index.html` (lede + question block + pillar 1). The topic fits the
 user's existing Wikidata/Shinto tooling, which supplies ground truth.
+
+## 2026-06-11 — Bootstrap 4: literature review
+
+Surveyed prior work across two themes — (A) LLMs as knowledge bases and
+(B) self-verification for factuality — via web search + WebFetch. Wrote
+`literature/sources.md` (10 annotated sources, claim/method/contribution/
+citation each) and synthesized `literature/REVIEW.md`. Key grounded
+findings carried in: LLM recall collapses on torso/tail entities
+(Head-to-Tail) and varies sharply by property type — countries ~90% vs
+dates ~40% on Wikidata-derived FACT-Bench; recall ≠ reliability (models
+overconfident, abstention matters); Chain-of-Verification's independent
+re-checking reduces hallucination but naive self-correction can *backfire*
+(1.55→2.13). **The gap o1 fills:** prior work measures generic closed-book
+QA, not actionable per-property precision/recall of proposed statements
+for one curated domain, with vs without a verify pass. Reflected the
+one-line summary into `docs/index.html` pillar 2. literature/ committed as
+its own reviewable artifact.
