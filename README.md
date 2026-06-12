@@ -34,13 +34,16 @@ building — see `literature/`.
 ## Getting started
 
 ```
-cd o1
-claude
+pip install -r requirements.txt
+pytest -q                 # run the test suite
+python scripts/run.py all # pipeline entry point (stages wired up in R2-R6)
 ```
 
-Then work `queue.md` top to bottom. The bootstrap sequence pins down the
-research question with you, runs the literature review, plans the experiments,
-takes the repo public, and keeps the report current as results land.
+The research question is set and the literature review is in `literature/`.
+Active experiment steps live in `queue.md` (the measurement spine: Wikidata
+sampler → held-out eval set → predict-only baseline → scoring → first run);
+longer-horizon goals are in `todo.md`. The `predict`/verify stages need an
+`ANTHROPIC_API_KEY` in the environment.
 
 ## Published report
 

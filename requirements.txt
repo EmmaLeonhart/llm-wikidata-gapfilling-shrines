@@ -1,0 +1,4 @@
+# Runtime + test dependencies for o1.
+requests>=2.31        # Wikidata SPARQL + entity fetches
+anthropic>=0.40       # Claude API client (predict / verify passes)
+pytest>=8.0           # test runner

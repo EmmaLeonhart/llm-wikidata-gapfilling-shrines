@@ -1,0 +1,10 @@
+[project]
+name = "o1"
+version = "0.0.1"
+description = "Measuring LLM Wikidata gap-filling for Shinto shrines, with and without self-verification"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+# src-layout: make `import o1` work in tests without an editable install.
+pythonpath = ["src"]
+testpaths = ["tests"]

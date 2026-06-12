@@ -27,20 +27,14 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **Project skeleton + test/CI harness.** Create the `src/o1/` package
-   (`__init__.py`), a `scripts/run.py` entry stub, `requirements.txt` (`requests`,
-   `anthropic`, `pytest`), a `tests/` dir with one trivial passing test, and
-   `.github/workflows/ci.yml` running `pytest` on push/PR. Update the README
-   quickstart. Commit, push, **confirm CI (ci.yml) goes green** before moving on.
-
-2. **Wikidata SPARQL sampler.** `src/o1/wikidata.py`: query Shinto-shrine entities
+1. **Wikidata SPARQL sampler.** `src/o1/wikidata.py`: query Shinto-shrine entities
    (`P31` → Shinto shrine `Q845945` and relevant subtypes) via the public SPARQL
    endpoint, returning label, description, **sitelink count (popularity proxy)**,
    and each entity's statements for the candidate target properties. Unit-test the
    result-parsing / normalization on a saved mock JSON payload (no live call in
    tests). Save a raw sample to `data_lake/shrines_raw.json`. Commit.
 
-3. **Target-property set + held-out eval builder.** Fix the target property list
+2. **Target-property set + held-out eval builder.** Fix the target property list
    (candidates: `P17` country, `P131` admin location, `P140` religion, `P31`
    instance-of, `P571` inception, `P625` coordinates, and an enshrined-deity link
    if reliably present) and **document it in `CLAUDE.md`**. `src/o1/dataset.py`:
@@ -49,18 +43,18 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
    popularity bucket. Save `data_lake/eval_set.json`. Tests cover the holdout +
    stratification logic. Commit.
 
-4. **Predict-only pipeline.** `src/o1/predict.py`: given an instance's context,
+3. **Predict-only pipeline.** `src/o1/predict.py`: given an instance's context,
    prompt Claude to **propose a value or explicitly abstain**, with per-property
    templates; parse + normalize the answer (QID resolution / date / coordinate /
    string forms). **Inject the model client** so parsing/normalization is unit-
    tested with a fake client — no live API calls in tests. Commit.
 
-5. **Scoring + metrics.** `src/o1/score.py`: match predicted vs held-out value
+4. **Scoring + metrics.** `src/o1/score.py`: match predicted vs held-out value
    (QID / date / coordinate / fuzzy-label normalization), compute **precision,
    recall, and abstention rate per property type and per popularity bucket**.
    Tests on hand-built cases (exact match, near-miss, abstain). Commit.
 
-6. **First end-to-end predict-only run.** Wire `scripts/run.py` to: load
+5. **First end-to-end predict-only run.** Wire `scripts/run.py` to: load
    `eval_set` → run predict-only over a modest sample → score → write
    `results/predict_only.json` + a compact markdown table. **Needs
    `ANTHROPIC_API_KEY`** — if it is not set in the environment, this is a
