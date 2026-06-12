@@ -1,4 +1,5 @@
 # Runtime + test dependencies for o1.
-requests>=2.31        # Wikidata SPARQL + entity fetches
-anthropic>=0.40       # Claude API client (predict / verify passes)
+# The LLM backend is LOCAL Gemma via Ollama (gemma3:12b at localhost:11434) —
+# no paid API, no SDK dependency. Ollama is driven over plain HTTP with requests.
+requests>=2.31        # Wikidata SPARQL + entity fetches + Ollama /api/generate
 pytest>=8.0           # test runner

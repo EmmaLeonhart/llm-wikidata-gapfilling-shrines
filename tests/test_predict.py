@@ -95,6 +95,22 @@ def test_unparseable_typed_answer_becomes_abstain_but_keeps_raw():
     assert pred["raw_answer"] == "I really don't know"
 
 
+def test_pick_resolver_hit_prefers_exact_label():
+    hits = [
+        {"id": "Q1203698", "label": "Shinto music"},
+        {"id": "Q812767", "label": "Shinto"},
+        {"id": "Q9001", "label": "Shintoism"},
+    ]
+    # exact label match wins over the higher-ranked near-match
+    assert pr.pick_resolver_hit(hits, "Shinto") == "Q812767"
+    # alias/match text also counts
+    hits2 = [{"id": "Q5", "label": "Japan", "match": {"text": "Nippon"}}]
+    assert pr.pick_resolver_hit(hits2, "Nippon") == "Q5"
+    # no exact match -> top hit
+    assert pr.pick_resolver_hit(hits, "something else") == "Q1203698"
+    assert pr.pick_resolver_hit([], "x") is None
+
+
 def test_predict_all_runs_over_list():
     client = lambda prompt: "ANSWER: 1879"
     preds = pr.predict_all([INSTANCE_DATE, INSTANCE_DATE], client)
