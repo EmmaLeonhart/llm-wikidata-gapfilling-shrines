@@ -43,6 +43,28 @@ ORDER BY DESC(?sitelinks)
 LIMIT {limit}
 """
 
+# Every shrine + its sitelink count (popularity proxy), no label service so it
+# stays light enough to return all ~31k rows for stratified sampling.
+SHRINE_POPULARITY_SPARQL = """
+SELECT ?item ?sitelinks WHERE {
+  ?item wdt:P31/wdt:P279* wd:Q845945 .
+  ?item wikibase:sitelinks ?sitelinks .
+}
+"""
+
+# Popularity buckets, set from the observed distribution over 30,913 shrines:
+# tail (0 sitelinks) ~76%, torso (1-5) ~23%, head (6+) ~0.7%.
+POPULARITY_BUCKETS = ("head", "torso", "tail")
+
+
+def popularity_bucket(sitelinks: int) -> str:
+    """Map a sitelink count to head / torso / tail."""
+    if sitelinks >= 6:
+        return "head"
+    if sitelinks >= 1:
+        return "torso"
+    return "tail"
+
 
 # --------------------------------------------------------------------------
 # Pure parsers (no network) — these carry the test coverage.
@@ -177,6 +199,78 @@ def sample_shrines(
         # SPARQL sitelink count is authoritative for ordering; keep it.
         entity["sitelinks"] = row["sitelinks"]
         entity["sparql_label"] = row["label"]
+        entities.append(entity)
+        if sleep_s:
+            time.sleep(sleep_s)
+    return entities
+
+
+def parse_popularity_rows(sparql_json: dict[str, Any]) -> list[dict[str, Any]]:
+    """Parse the popularity query into ``[{qid, sitelinks, bucket}, ...]``."""
+    out: list[dict[str, Any]] = []
+    for b in sparql_json.get("results", {}).get("bindings", []):
+        uri = b.get("item", {}).get("value", "")
+        qid = uri.rsplit("/", 1)[-1] if uri else ""
+        if not qid:
+            continue
+        try:
+            sitelinks = int(b.get("sitelinks", {}).get("value", 0))
+        except (TypeError, ValueError):
+            sitelinks = 0
+        out.append({"qid": qid, "sitelinks": sitelinks,
+                    "bucket": popularity_bucket(sitelinks)})
+    return out
+
+
+def stratified_sample(
+    rows: list[dict[str, Any]], per_bucket: int, seed: int = 0
+) -> list[dict[str, Any]]:
+    """Deterministically pick up to ``per_bucket`` entities from each bucket.
+
+    Determinism: sort each bucket by qid and take evenly-spaced picks. No RNG,
+    so the same input always yields the same sample (reproducible eval set).
+    """
+    by_bucket: dict[str, list[dict[str, Any]]] = {b: [] for b in POPULARITY_BUCKETS}
+    for r in rows:
+        by_bucket.setdefault(r["bucket"], []).append(r)
+    picked: list[dict[str, Any]] = []
+    for bucket in POPULARITY_BUCKETS:
+        items = sorted(by_bucket.get(bucket, []), key=lambda r: r["qid"])
+        if not items:
+            continue
+        if len(items) <= per_bucket:
+            picked.extend(items)
+            continue
+        # Evenly spaced indices across the sorted bucket; offset by seed.
+        step = len(items) / per_bucket
+        idxs = sorted({int((i * step + seed) % len(items)) for i in range(per_bucket)})
+        # Top up if the modulo collapsed any duplicates.
+        j = 0
+        while len(idxs) < per_bucket and j < len(items):
+            if j not in idxs:
+                idxs.append(j)
+            j += 1
+        picked.extend(items[i] for i in sorted(idxs)[:per_bucket])
+    return picked
+
+
+def sample_shrines_stratified(
+    per_bucket: int = 40,
+    target_pids: Iterable[str] = tuple(DEFAULT_TARGET_PROPERTIES),
+    getter: Callable[..., dict] = _get_json,
+    seed: int = 0,
+    sleep_s: float = 0.2,
+) -> list[dict[str, Any]]:
+    """Sample ``per_bucket`` shrines from each popularity bucket, with statements."""
+    pop_json = run_sparql(SHRINE_POPULARITY_SPARQL, getter=getter)
+    rows = parse_popularity_rows(pop_json)
+    chosen = stratified_sample(rows, per_bucket=per_bucket, seed=seed)
+    entities: list[dict[str, Any]] = []
+    for row in chosen:
+        ej = fetch_entity_json(row["qid"], getter=getter)
+        entity = parse_entity(ej, row["qid"], target_pids=target_pids)
+        entity["sitelinks"] = row["sitelinks"]
+        entity["popularity_bucket"] = row["bucket"]
         entities.append(entity)
         if sleep_s:
             time.sleep(sleep_s)

@@ -1,0 +1,5778 @@
+[
+  {
+    "qid": "Q10855232",
+    "label_en": "Keijō Shrine",
+    "label_ja": "京城神社",
+    "description_en": "1898–1945 Shinto shrine in Seoul, Korea",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q188712"
+        },
+        {
+          "type": "entity",
+          "value": "Q503585"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q483984"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q812767"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11590310"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1898-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            37.5569,
+            126.9864
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q11259219",
+    "label_en": "Enoshima Shrine",
+    "label_ja": "江島神社",
+    "description_en": "Shinto shrine in Kanagawa Prefecture, Japan",
+    "sitelinks": 8,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q386661"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.30036111111111,
+            139.4796111111111
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q11437230",
+    "label_en": "Ōarai Isosaki Shrine",
+    "label_ja": "大洗磯前神社",
+    "description_en": "Shinto shrine in Ibaraki Prefecture, Japan",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1349185"
+        },
+        {
+          "type": "entity",
+          "value": "Q1055353"
+        },
+        {
+          "type": "entity",
+          "value": "Q6374307"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0856-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.315905,
+            140.587221
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q11574477",
+    "label_en": "Ikukunitama Shrine",
+    "label_ja": "生國魂神社",
+    "description_en": "Shinto shrine in Osaka Prefecture, Japan",
+    "sitelinks": 7,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q72930184"
+        },
+        {
+          "type": "entity",
+          "value": "Q864163"
+        },
+        {
+          "type": "entity",
+          "value": "Q10870274"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009157"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.665111,
+            135.512995
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q11597744",
+    "label_en": "Kamado Shrine",
+    "label_ja": "竈門神社",
+    "description_en": "Shinto shrine in Fukuoka Prefecture, Japan",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q728218"
+        },
+        {
+          "type": "entity",
+          "value": "Q1047664"
+        },
+        {
+          "type": "entity",
+          "value": "Q11071211"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0673-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.539801,
+            130.569122
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q12742788",
+    "label_en": "Uji Shrine",
+    "label_ja": "宇治神社",
+    "description_en": "Shinto shrine in Kyoto Prefecture, Japan",
+    "sitelinks": 7,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q326956"
+        },
+        {
+          "type": "entity",
+          "value": "Q749276"
+        },
+        {
+          "type": "entity",
+          "value": "Q10946235"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009152"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.891066,
+            135.810767
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q137707",
+    "label_en": "Katō Shrine",
+    "label_ja": "加藤神社",
+    "description_en": "Shinto shrine in Kumamoto Prefecture, Japan",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q137716"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q22131342"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1871-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            32.80370556,
+            130.70672778
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q172382",
+    "label_en": "Watatsu Shrine",
+    "label_ja": "度津神社",
+    "description_en": "Shinto shrine in Sado, Niigata Prefecture, Japan",
+    "sitelinks": 7,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q499047"
+        },
+        {
+          "type": "entity",
+          "value": "Q1063844"
+        },
+        {
+          "type": "entity",
+          "value": "Q11610352"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            37.860316,
+            138.330739
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q195715",
+    "label_en": "Yusuhara Hachimangū",
+    "label_ja": "柞原八幡宮",
+    "description_en": "Shinto shrine in Oita Prefecture, Japan",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q199609"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.2384,
+            131.551
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q242803",
+    "label_en": "Yasukuni Shrine",
+    "label_ja": "靖国神社",
+    "description_en": "Shinto shrine in Tokyo, Japan",
+    "sitelinks": 48,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q3346578"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q1197248"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q175288"
+        },
+        {
+          "type": "entity",
+          "value": "Q575759"
+        },
+        {
+          "type": "entity",
+          "value": "Q1534477"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1869-08-06T00:00:00Z",
+          "precision": 11
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.693958333333335,
+            139.74269166666667
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q251156",
+    "label_en": "Tōzan Shrine",
+    "label_ja": "陶山神社",
+    "description_en": "Shinto shrines in Saga Prefecture, Japan",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q668427"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q812767"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1658-09-12T00:00:00Z",
+          "precision": 11
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.18886111,
+            129.89941667
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q11579194"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q2827917",
+    "label_en": "Iwama Dōjō",
+    "label_ja": "合氣神社",
+    "description_en": "Shinto shrine in Kasama, Japan",
+    "sitelinks": 9,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q845851"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1962-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.294222222222224,
+            140.28136111111112
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q29682",
+    "label_en": "Sumiyoshi Shrine",
+    "label_ja": "住吉神社",
+    "description_en": "Shinto shrine in Hakata-ku, Fukuoka, Japan",
+    "sitelinks": 8,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q28689038"
+        },
+        {
+          "type": "entity",
+          "value": "Q131469334"
+        },
+        {
+          "type": "entity",
+          "value": "Q1047664"
+        },
+        {
+          "type": "entity",
+          "value": "Q11642798"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q32512"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q134987079"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.58575,
+            130.41375
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q3197197",
+    "label_en": "Kinpu Shrine",
+    "label_ja": "金峯神社",
+    "description_en": "Shinto shrine in Nara Prefecture, Japan",
+    "sitelinks": 8,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1203731"
+        },
+        {
+          "type": "entity",
+          "value": "Q907495"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q812767"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q11488964"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009157"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.342603,
+            135.881801
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q43113623"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q3342690",
+    "label_en": "Nogi Shrine",
+    "label_ja": "乃木神社",
+    "description_en": "Shinto shrine in Tokyo, Japan",
+    "sitelinks": 9,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q416131"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q11368830"
+        },
+        {
+          "type": "entity",
+          "value": "Q514480"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1923-11-01T00:00:00Z",
+          "precision": 11
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.66888889,
+            139.72805556
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q3473746",
+    "label_en": "Saruka Shrine",
+    "label_ja": "猿賀神社",
+    "description_en": "Shinto shrine in Aomori Prefecture, Japan",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q695930"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q812767"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0793-00-00T00:00:00Z",
+          "precision": 9
+        },
+        {
+          "type": "time",
+          "value": "+0807-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            40.61694444,
+            140.56305556
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q3541675",
+    "label_en": "Tsuno Shrine",
+    "label_ja": "都農神社",
+    "description_en": "Shinto shrine in Tsuno, Miyazaki prefecture, Japan",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1205974"
+        },
+        {
+          "type": "entity",
+          "value": "Q513737"
+        },
+        {
+          "type": "entity",
+          "value": "Q1132169"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            32.263132,
+            131.558668
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q385141",
+    "label_en": "Heian Jingū",
+    "label_ja": "平安神宮",
+    "description_en": "Shinto shrine in Kyoto Prefecture, Japan",
+    "sitelinks": 27,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1321832"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q812767"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q120680118"
+        },
+        {
+          "type": "entity",
+          "value": "Q175288"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1895-03-15T00:00:00Z",
+          "precision": 11
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.016666666667,
+            135.78222222222
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q482065",
+    "label_en": "Atsuta Jingū",
+    "label_ja": "熱田神宮",
+    "description_en": "Shinto shrine in Aichi Prefecture, Japan",
+    "sitelinks": 23,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q66825637"
+        },
+        {
+          "type": "entity",
+          "value": "Q514506"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q812767"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q120680118"
+        },
+        {
+          "type": "entity",
+          "value": "Q175288"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q85878469"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.126509,
+            136.908698
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q500368",
+    "label_en": "Shizuoka Sengen Shrine",
+    "label_ja": "静岡浅間神社",
+    "description_en": "Shinto shrine in Shizuoka Prefecture, Japan",
+    "sitelinks": 9,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1131483"
+        },
+        {
+          "type": "entity",
+          "value": "Q864170"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q3471785"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.98361111111111,
+            138.37527777777777
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q583589",
+    "label_en": "Ujigami Shrine",
+    "label_ja": "宇治上神社",
+    "description_en": "Shinto shrine in Kyoto Prefecture, Japan",
+    "sitelinks": 20,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q326956"
+        },
+        {
+          "type": "entity",
+          "value": "Q749276"
+        },
+        {
+          "type": "entity",
+          "value": "Q10946235"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009152"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.892091,
+            135.811456
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1139795"
+        },
+        {
+          "type": "entity",
+          "value": "Q43113623"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q63471",
+    "label_en": "Omura Shrine",
+    "label_ja": "小村神社",
+    "description_en": "Shinto shrine in Kōchi Prefecture, Japan",
+    "sitelinks": 7,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1156151"
+        },
+        {
+          "type": "entity",
+          "value": "Q134093"
+        },
+        {
+          "type": "entity",
+          "value": "Q857330"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q812767"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q118304363"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0587-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.54327778,
+            133.393
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q654417",
+    "label_en": "Tomioka Hachiman Shrine",
+    "label_ja": "富岡八幡宮",
+    "description_en": "Shinto shrine in Tokyo, Japan",
+    "sitelinks": 9,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q11456868"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1627-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.671753,
+            139.799583
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q662176",
+    "label_en": "Kitano Tenmangū",
+    "label_ja": "北野天満宮",
+    "description_en": "Shinto shrine in Kyoto, Japan",
+    "sitelinks": 20,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1321824"
+        },
+        {
+          "type": "entity",
+          "value": "Q749276"
+        },
+        {
+          "type": "entity",
+          "value": "Q13579879"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q66890725"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q798838"
+        },
+        {
+          "type": "entity",
+          "value": "Q118304363"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022918"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009132"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0947-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.029195,
+            135.735008
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1139795"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q696641",
+    "label_en": "Nikkō Tōshō-gū",
+    "label_ja": "日光東照宮",
+    "description_en": "Shinto shrines in Tochigi Prefecture, Japan",
+    "sitelinks": 25,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q235753"
+        },
+        {
+          "type": "entity",
+          "value": "Q1346070"
+        },
+        {
+          "type": "entity",
+          "value": "Q11643830"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q4407806"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q1190456"
+        },
+        {
+          "type": "entity",
+          "value": "Q5358797"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1617-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.759166666667,
+            139.59861111111
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1139795"
+        },
+        {
+          "type": "entity",
+          "value": "Q43113623"
+        },
+        {
+          "type": "entity",
+          "value": "Q30834580"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q701414",
+    "label_en": "Inaba Shrine",
+    "label_ja": "伊奈波神社",
+    "description_en": "Shinto shrine in Gifu Prefecture, Japan",
+    "sitelinks": 8,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q45798"
+        },
+        {
+          "type": "entity",
+          "value": "Q864156"
+        },
+        {
+          "type": "entity",
+          "value": "Q11409326"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q118304363"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.427227,
+            136.770815
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q703633",
+    "label_en": "Hikawa Shrine",
+    "label_ja": "氷川神社",
+    "description_en": "Shinto shrine in Saitama, Japan",
+    "sitelinks": 16,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q153629"
+        },
+        {
+          "type": "entity",
+          "value": "Q907398"
+        },
+        {
+          "type": "entity",
+          "value": "Q11637033"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q11549596"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q125314171"
+        },
+        {
+          "type": "entity",
+          "value": "Q175288"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009132"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.917037,
+            139.629461
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q704636",
+    "label_en": "Naminoue Shrine",
+    "label_ja": "波上宮",
+    "description_en": "Shinto shrine in Okinawa Prefecture, Japan",
+    "sitelinks": 7,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q181966"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q3200355"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1368-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            26.220636,
+            127.671352
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q704865",
+    "label_en": "Hida Ichinomiya Minashi Shrine",
+    "label_ja": "飛騨一宮水無神社",
+    "description_en": "Shinto shrine in Gifu Prefecture, Japan",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q622594"
+        },
+        {
+          "type": "entity",
+          "value": "Q1056535"
+        },
+        {
+          "type": "entity",
+          "value": "Q31671"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.08523,
+            137.251949
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q705035",
+    "label_en": "Kumano Hongū Taisha",
+    "label_ja": "熊野本宮大社",
+    "description_en": "Shinto shrine in Wakayama Prefecture, Japan",
+    "sitelinks": 15,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q17220107"
+        },
+        {
+          "type": "entity",
+          "value": "Q864053"
+        },
+        {
+          "type": "entity",
+          "value": "Q6938811"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q3200355"
+        },
+        {
+          "type": "entity",
+          "value": "Q11438310"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009906"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1891-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.840401,
+            135.773553
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q43113623"
+        },
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q705136",
+    "label_en": "Tsushima Shrine",
+    "label_ja": "津島神社",
+    "description_en": "Shinto shrine in Aichi Prefecture, Japan",
+    "sitelinks": 8,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q117311670"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q125757379"
+        },
+        {
+          "type": "entity",
+          "value": "Q11588442"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0540-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.17833333,
+            136.71861111
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q705297",
+    "label_en": "Nishinomiya Shrine",
+    "label_ja": "西宮神社",
+    "description_en": "Shinto shrine in Hyōgo Prefecture, Japan",
+    "sitelinks": 9,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q243853"
+        },
+        {
+          "type": "entity",
+          "value": "Q864163"
+        },
+        {
+          "type": "entity",
+          "value": "Q11619987"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11261031"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009906"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009152"
+        },
+        {
+          "type": "entity",
+          "value": "Q135100459"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.73572778,
+            135.33457778
+          ]
+        },
+        {
+          "type": "coordinate",
+          "value": [
+            34.735891,
+            135.334152
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q705916",
+    "label_en": "Masumida Shrine",
+    "label_ja": "真清田神社",
+    "description_en": "Shinto shrine in Ichinomiya, Aichi prefecture, Japan",
+    "sitelinks": 7,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q270810"
+        },
+        {
+          "type": "entity",
+          "value": "Q514506"
+        },
+        {
+          "type": "entity",
+          "value": "Q780420"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.307325,
+            136.801968
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q11579194"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q708550",
+    "label_en": "Ueno Tōshō-gū",
+    "label_ja": "上野東照宮",
+    "description_en": "building in Tokyo, Japan",
+    "sitelinks": 13,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q92909922"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q1190456"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+1627-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.71536111,
+            139.77058333
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q710098",
+    "label_en": "Iwashimizu Hachimangū",
+    "label_ja": "石清水八幡宮",
+    "description_en": "Shinto shrine in Kyoto Prefecture, Japan",
+    "sitelinks": 17,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q260923"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        },
+        {
+          "type": "entity",
+          "value": "Q175288"
+        },
+        {
+          "type": "entity",
+          "value": "Q118304363"
+        },
+        {
+          "type": "entity",
+          "value": "Q134987079"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0860-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.879722222222,
+            135.7
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1139795"
+        },
+        {
+          "type": "entity",
+          "value": "Q30834580"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q710359",
+    "label_en": "Kumano Nachi Taisha",
+    "label_ja": "熊野那智大社",
+    "description_en": "Shinto shrine in Nachikatsuura, Wakayama Prefecture, Japan",
+    "sitelinks": 14,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1346730"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q3200355"
+        },
+        {
+          "type": "entity",
+          "value": "Q11438310"
+        },
+        {
+          "type": "entity",
+          "value": "Q118304363"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0500-00-00T00:00:00Z",
+          "precision": 7
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.66856835,
+            135.8904934
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q43113623"
+        },
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q713021",
+    "label_en": "Atago Shrine",
+    "label_ja": "愛宕神社",
+    "description_en": "Shinto shrine in Kyoto Prefecture, Japan",
+    "sitelinks": 11,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q580186"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q11493823"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q125313404"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022918"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.05994444,
+            135.63444722
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q714742",
+    "label_en": "Hakozaki Shrine",
+    "label_ja": "筥崎宮",
+    "description_en": "Shinto shrine in Fukuoka Prefecture, Japan",
+    "sitelinks": 10,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q11603321"
+        },
+        {
+          "type": "entity",
+          "value": "Q1206659"
+        },
+        {
+          "type": "entity",
+          "value": "Q26600"
+        },
+        {
+          "type": "entity",
+          "value": "Q123258"
+        },
+        {
+          "type": "entity",
+          "value": "Q1047664"
+        },
+        {
+          "type": "entity",
+          "value": "Q11642798"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q134987079"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0923-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.614749,
+            130.422887
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q715632",
+    "label_en": "Usa Jingū",
+    "label_ja": "宇佐神宮",
+    "description_en": "Shinto shrines in Ōita Prefecture, Japan",
+    "sitelinks": 16,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q114147"
+        },
+        {
+          "type": "entity",
+          "value": "Q1047134"
+        },
+        {
+          "type": "entity",
+          "value": "Q7901661"
+        }
+      ],
+      "P140": [
+        {
+          "type": "entity",
+          "value": "Q812767"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        },
+        {
+          "type": "entity",
+          "value": "Q175288"
+        },
+        {
+          "type": "entity",
+          "value": "Q120680118"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q134987079"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0725-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.526019,
+            131.374627
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1139795"
+        },
+        {
+          "type": "entity",
+          "value": "Q30834580"
+        },
+        {
+          "type": "entity",
+          "value": "Q23790"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q8010918",
+    "label_en": "Koxinga's Shrine",
+    "label_ja": "延平郡王祠",
+    "description_en": "temple in Taiwan, formerly a Shinto Shrine",
+    "sitelinks": 6,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q865"
+        },
+        {
+          "type": "entity",
+          "value": "Q188712"
+        },
+        {
+          "type": "entity",
+          "value": "Q8733"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q96977594"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q2680845"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            22.98777778,
+            120.2075
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q10915557"
+        }
+      ]
+    },
+    "popularity_bucket": "head"
+  },
+  {
+    "qid": "Q100152252",
+    "label_en": "Nishi-hachiman-sha",
+    "label_ja": "西八幡社",
+    "description_en": "Shinto shrine in Gunsui-chō, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q21652993"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.114357,
+            136.949185
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q107020571",
+    "label_en": "Main Shrine, Kitano-tenmangu",
+    "label_ja": "北野天満宮社殿",
+    "description_en": "Shinto shrine in Kyoto Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1321824"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q2044994"
+        },
+        {
+          "type": "entity",
+          "value": "Q3125745"
+        },
+        {
+          "type": "entity",
+          "value": "Q798838"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.03124,
+            135.735
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "type": "entity",
+          "value": "Q1188622"
+        },
+        {
+          "type": "entity",
+          "value": "Q1139795"
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q111020041",
+    "label_en": "Midori Katori Shrine",
+    "label_ja": "緑香取神社",
+    "description_en": "Shinto shrine in Chiba Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q243859"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11667187"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.86958,
+            140.01352
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11358370",
+    "label_en": "Kaminoshima-Shinmei Shrine",
+    "label_ja": "上ノ島神明神社",
+    "description_en": "Shinto shrine in Gifu Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q641491"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q11590310"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.3689389,
+            136.8392611
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11379327",
+    "label_en": "Ikota Shrine",
+    "label_ja": "伊居太神社",
+    "description_en": "Shinto shrine in Hyōgo Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q213318"
+        },
+        {
+          "type": "entity",
+          "value": "Q864163"
+        },
+        {
+          "type": "entity",
+          "value": "Q1042053"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q125316983"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160338"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.747197,
+            135.43382
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11391090",
+    "label_en": "Ogu Hachiman Shrine",
+    "label_ja": "尾久八幡神社",
+    "description_en": "Shinto shrine in Tokyo, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q11627711"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.75047222222222,
+            139.765
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11411027",
+    "label_en": "Komiya-hachimangū",
+    "label_ja": "古宮八幡宮",
+    "description_en": "Shinto shrine in Fukuoka Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q573632"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.706444,
+            130.854111
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11434131",
+    "label_en": "Ōshio Hachiman Shrine",
+    "label_ja": "大塩八幡宮",
+    "description_en": "Shinto shrine in Fukui Prefecture, Japan",
+    "sitelinks": 3,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q877941"
+        },
+        {
+          "type": "entity",
+          "value": "Q1047144"
+        },
+        {
+          "type": "entity",
+          "value": "Q11499560"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009906"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.8492,
+            136.171
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11449442",
+    "label_en": "Umorihiko Shrine",
+    "label_ja": "宇母理比古神社",
+    "description_en": "Shinto shrine in Tokushima Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q207309"
+        },
+        {
+          "type": "entity",
+          "value": "Q907457"
+        },
+        {
+          "type": "entity",
+          "value": "Q1119478"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            33.990087,
+            134.515131
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11473749",
+    "label_en": "Oka Inari Shrine",
+    "label_ja": "岡稲荷神社",
+    "description_en": "Shinto shrine in Hyōgo Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q869020"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q514480"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.021611,
+            135.002778
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11492453",
+    "label_en": "Ena Shrine",
+    "label_ja": "恵那神社",
+    "description_en": "shrine in Nakatsugawa, Gifu",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q844052"
+        },
+        {
+          "type": "entity",
+          "value": "Q864156"
+        },
+        {
+          "type": "entity",
+          "value": "Q3030924"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.44335,
+            137.533733
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11513665",
+    "label_en": "Kasuga Shrine",
+    "label_ja": "春日神社",
+    "description_en": "Shinto shrine in Tokushima Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q207309"
+        },
+        {
+          "type": "entity",
+          "value": "Q907457"
+        },
+        {
+          "type": "entity",
+          "value": "Q3205778"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q125316983"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.072194444444,
+            134.54261111111
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11537501",
+    "label_en": "Kuwana Sōsha",
+    "label_ja": "桑名宗社",
+    "description_en": "Shinto shrine in Mie Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q496472"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q125316983"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917291"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.065444,
+            136.694639
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11555561",
+    "label_en": "Hahaki Shrine",
+    "label_ja": "波波伎神社",
+    "description_en": "Shinto shrine in Tottori Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q642006"
+        },
+        {
+          "type": "entity",
+          "value": "Q1053703"
+        },
+        {
+          "type": "entity",
+          "value": "Q11142103"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.465251,
+            133.854114
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11572840",
+    "label_en": "Tamano Ontake Shrine",
+    "label_ja": "玉野御嶽神社",
+    "description_en": "Shinto shrine in Aichi Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q26101"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11488964"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.276972,
+            137.078778
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11587896",
+    "label_en": "Iwahashi Shrine",
+    "label_ja": "磐椅神社",
+    "description_en": "Shinto shrine in Fukushima Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q669633"
+        },
+        {
+          "type": "entity",
+          "value": "Q907389"
+        },
+        {
+          "type": "entity",
+          "value": "Q1205228"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            37.571135,
+            140.104923
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11608847",
+    "label_en": "Miwa Shrine (Higashisue, Setouchi)",
+    "label_ja": "美和神社",
+    "description_en": "Shinto shrine in Okayama Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q691691"
+        },
+        {
+          "type": "entity",
+          "value": "Q1053688"
+        },
+        {
+          "type": "entity",
+          "value": "Q7082713"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q134986940"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.675147,
+            134.144889
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11625225",
+    "label_en": "Sobataka Shrine",
+    "label_ja": "蘇羽鷹神社",
+    "description_en": "Shinto shrine in Chiba Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q320943"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.818083,
+            139.926861
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11644955",
+    "label_en": "Nokami Hachimangū",
+    "label_ja": "野上八幡宮",
+    "description_en": "Shinto shrine in Wakayama Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1354884"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.165722,
+            135.294611
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11664501",
+    "label_en": "Susa Shrine",
+    "label_ja": "須佐神社 (有田市)",
+    "description_en": "Shinto shrine in Wakayama Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q657843"
+        },
+        {
+          "type": "entity",
+          "value": "Q864053"
+        },
+        {
+          "type": "entity",
+          "value": "Q1131181"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009132"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.064976,
+            135.141519
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q11677124",
+    "label_en": "Kashima Miko Shrine",
+    "label_ja": "鹿島御子神社",
+    "description_en": "Shinto shrine in Fukushima Prefecture, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q642094"
+        },
+        {
+          "type": "entity",
+          "value": "Q907389"
+        },
+        {
+          "type": "entity",
+          "value": "Q11626139"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q125316862"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            37.702916,
+            140.96685
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q118714267",
+    "label_en": "Sannō Shrine",
+    "label_ja": "山王神社",
+    "description_en": "shrine in Edogawa-ku, Tokyo",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q11528068"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q125339990"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.6864,
+            139.89453
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q119929653",
+    "label_en": "Katayama Shrine",
+    "label_ja": "片山神社",
+    "description_en": "Shinto shrine in Osaka Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q653510"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.765,
+            135.518472
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q124482364",
+    "label_en": "Katori Shrine",
+    "label_ja": "香取神社",
+    "description_en": "Shinto shrine in Sugito, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1345351"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11667187"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.03036,
+            139.73739
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q128866657",
+    "label_en": "Hikawa Shrine",
+    "label_ja": "氷川神社",
+    "description_en": "Shinto shrine in Konosu, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q734541"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q125314171"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.055972,
+            139.533333
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q131274471",
+    "label_en": "Narahahachiman Shrine",
+    "label_ja": "楢葉八幡神社",
+    "description_en": "Shinto shrine in Fukushima Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1354828"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            37.232139,
+            140.99725
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q133515958",
+    "label_en": "Yajigawa-benzaiten Shrine",
+    "label_ja": "谷地川弁才天",
+    "description_en": "small shrine in Nakazawa, Kamagaya",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q387365"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q1442984"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.75377,
+            139.977008
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q134926794",
+    "label_en": "Maruyama Shrine",
+    "label_ja": "丸山神社 (中津川市)",
+    "description_en": "Shinto shrine in Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q131277"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q134986916",
+    "label_en": null,
+    "label_ja": "貴布祢神社神楽",
+    "description_en": null,
+    "sitelinks": 1,
+    "statements": {
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q134986912"
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q135045395",
+    "label_en": "Kamohara Shrine",
+    "label_ja": "賀茂波爾神社",
+    "description_en": "Candidate shrine for Kamonohanino shrine",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q749276"
+        },
+        {
+          "type": "entity",
+          "value": "Q10981345"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009977"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160338"
+        },
+        {
+          "type": "entity",
+          "value": "Q135100459"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.043168,
+            135.782807
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q137321732",
+    "label_en": "Emperor Sudo Shrine in Nara Deyashiki",
+    "label_ja": null,
+    "description_en": "Shrine for Emperor Sudo",
+    "sitelinks": 1,
+    "statements": {
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q24876234"
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q17213398",
+    "label_en": "Kiyonoiba Shrine",
+    "label_ja": "清野井庭神社",
+    "description_en": "Shinto shrine in Mie Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q328067"
+        },
+        {
+          "type": "entity",
+          "value": "Q864166"
+        },
+        {
+          "type": "entity",
+          "value": "Q1131032"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135100459"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.495015,
+            136.69673
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q17228121",
+    "label_en": "Katada Shrine",
+    "label_ja": "堅田神社",
+    "description_en": "Shinto shrine in Mie Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q328067"
+        },
+        {
+          "type": "entity",
+          "value": "Q864166"
+        },
+        {
+          "type": "entity",
+          "value": "Q1131032"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135009904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135100459"
+        },
+        {
+          "type": "entity",
+          "value": "Q135419779"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.505698,
+            136.779849
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q22117831",
+    "label_en": "Ionoi Shrine",
+    "label_ja": "五百井神社",
+    "description_en": "Shinto shrine in Shiga Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q857310"
+        },
+        {
+          "type": "entity",
+          "value": "Q843882"
+        },
+        {
+          "type": "entity",
+          "value": "Q6446084"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.011586,
+            136.001387
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q28682737",
+    "label_en": "Nahe Shrine",
+    "label_ja": "那閉神社",
+    "description_en": "Shinto shrine in Shizuoka Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q696783"
+        },
+        {
+          "type": "entity",
+          "value": "Q864170"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.880478,
+            138.336014
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q38276136",
+    "label_en": "Matsuo Shrine",
+    "label_ja": "松尾神社",
+    "description_en": "shrine in Chūō-ku, Kōbe",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q686802"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11529677"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.69489,
+            135.190923
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q54153265",
+    "label_en": "Chikatsu Shrine",
+    "label_ja": "近津神社",
+    "description_en": "shrine in Daigo, Ibaraki",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1346817"
+        },
+        {
+          "type": "entity",
+          "value": "Q1055353"
+        },
+        {
+          "type": "entity",
+          "value": "Q1075212"
+        },
+        {
+          "type": "entity",
+          "value": "Q838663"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.817729,
+            140.373193
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q61058183",
+    "label_en": "Isuzu Shrine",
+    "label_ja": "五十鈴神社",
+    "description_en": "Shinto shrine in Miyagi Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q235746"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            38.907111111111114,
+            141.57919444444445
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q79733806",
+    "label_en": "Akiu Shrine",
+    "label_ja": "秋保神社",
+    "description_en": "Shinto shrine in Miyagi Prefecture, Japan",
+    "sitelinks": 1,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1043331"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q2370082"
+        }
+      ],
+      "P571": [
+        {
+          "type": "time",
+          "value": "+0808-00-00T00:00:00Z",
+          "precision": 9
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            38.26361111111111,
+            140.6596111111111
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q97181309",
+    "label_en": "Miwasato Inari Shrine",
+    "label_ja": "三輪里稲荷神社",
+    "description_en": "Shinto shrine in Tokyo, Japan",
+    "sitelinks": 2,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q11391119"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q514480"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.720402,
+            139.826375
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "torso"
+  },
+  {
+    "qid": "Q100884413",
+    "label_en": "Honjō Hachiman Shrine",
+    "label_ja": "本荘八幡神社",
+    "description_en": "Shinto shrine in Akita Prefecture, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q602903"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            39.39077777777778,
+            140.05469444444444
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q132568634",
+    "label_en": "Hachiman Shrine",
+    "label_ja": "八幡神社",
+    "description_en": "Shinto shrine in Sammu, Chiba prefecture, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q873528"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.58097007735826,
+            140.4713780637805
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134596109",
+    "label_en": "Yama‑no‑Kami Shrine",
+    "label_ja": "山神神社",
+    "description_en": "Shinto shrine in Chiba Prefecture, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1346191"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134597805",
+    "label_en": "Hachiman Shrine",
+    "label_ja": "八幡神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1203260"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134598757",
+    "label_en": "Shimo Yasaka Shrine",
+    "label_ja": "下八坂神社",
+    "description_en": "Shinto shrine in Chiba Prefecture, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q858357"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134603301",
+    "label_en": "Omotaru Shrine",
+    "label_ja": "面足神社",
+    "description_en": "Shinto shrine in Nagara, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1203545"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11602399"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134886319",
+    "label_en": null,
+    "label_ja": "金崎神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q376023"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.994598,
+            139.802032
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134886928",
+    "label_en": "Hikawa Shrine",
+    "label_ja": "氷川神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1154570"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q125314171"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134955523",
+    "label_en": "Sengen Shrine",
+    "label_ja": "浅間神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q847577"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134956219",
+    "label_en": "Kumano Shrine",
+    "label_ja": "熊野神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1203533"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q3200355"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.120481,
+            138.973175
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134956891",
+    "label_en": null,
+    "label_ja": "波布比咩命神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q653402"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134957545",
+    "label_en": "Hachimangū",
+    "label_ja": "八幡宮",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q496072"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.202492,
+            138.58815
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134958247",
+    "label_en": "Inari Shrine",
+    "label_ja": "稲荷神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q117084743"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q514480"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.679249,
+            137.766312
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q134989323",
+    "label_en": "Suwa Shrine",
+    "label_ja": "諏訪神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q200707"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q2370082"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.329769,
+            134.046661
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135039126",
+    "label_en": "Takamiyaohomorino Shrine",
+    "label_ja": "高宮大社祖神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1047150"
+        },
+        {
+          "type": "entity",
+          "value": "Q11632569"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160338"
+        },
+        {
+          "type": "entity",
+          "value": "Q135038714"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135039580",
+    "label_en": "Tadaki Shinmeigu",
+    "label_ja": "神明宮 (浜松市只木)",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1048864"
+        },
+        {
+          "type": "entity",
+          "value": "Q1042370"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.826504,
+            137.572596
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135040033",
+    "label_en": "Wakaetokono Shrine",
+    "label_ja": "和我叡登挙神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q907389"
+        },
+        {
+          "type": "entity",
+          "value": "Q1131876"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135040560",
+    "label_en": "Iyatono Shrine",
+    "label_ja": "弥刀神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1054331"
+        },
+        {
+          "type": "entity",
+          "value": "Q1078639"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.539634,
+            135.11362
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135041153",
+    "label_en": "Nakatomiitateno Shrine",
+    "label_ja": "中臣印達神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1047523"
+        },
+        {
+          "type": "entity",
+          "value": "Q1042150"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q135038714"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135069200",
+    "label_en": "Niigaki Shrine",
+    "label_ja": "新垣神社",
+    "description_en": "Candidate shrine for Ihatano shrine",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q864166"
+        },
+        {
+          "type": "entity",
+          "value": "Q1042360"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135070189",
+    "label_en": "Sumiyoshi Shrine",
+    "label_ja": "住吉神社",
+    "description_en": "Candidate shrine for Sukatano shrine",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1047523"
+        },
+        {
+          "type": "entity",
+          "value": "Q11634953"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q32512"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.883383,
+            134.974332
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135153830",
+    "label_en": "Itsukushima Shrine",
+    "label_ja": "厳島神社",
+    "description_en": "Shinto shrine in Tsukubamirai, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q877254"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11451876"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.974541,
+            140.044281
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135154450",
+    "label_en": "Inari Shrine",
+    "label_ja": "稲荷神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q694322"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q514480"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135155033",
+    "label_en": "Hachiman Shrine",
+    "label_ja": "八幡神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q847569"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.258465,
+            139.882248
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135155662",
+    "label_en": "Kotohira Shrine",
+    "label_ja": "琴平神社",
+    "description_en": "Shinto shrine in Hitachinaka, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q696772"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11646488"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.357418,
+            140.610519
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135185436",
+    "label_en": "Co-Enshrinement in Tamanoya Shrine",
+    "label_ja": "（合祀）玉祖神社",
+    "description_en": "A candidate shrine for Kamono Shrine",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1047150"
+        },
+        {
+          "type": "entity",
+          "value": "Q11669131"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q135100459"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160338"
+        },
+        {
+          "type": "entity",
+          "value": "Q11412524"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            34.634823,
+            135.65267
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135193479",
+    "label_en": "Kanda Shrine (Oaza Fumon)",
+    "label_ja": "神田神社",
+    "description_en": "Ronsha 2 of Kantano Shrine",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q843882"
+        },
+        {
+          "type": "entity",
+          "value": "Q7496289"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            35.13625,
+            135.906617
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135194940",
+    "label_en": "Nakawokano Shrine",
+    "label_ja": "（参考）川田八幡宮",
+    "description_en": "A candidate shrine for Nakawokano shrine",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q906899"
+        },
+        {
+          "type": "entity",
+          "value": "Q11588138"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q135022904"
+        },
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ],
+      "P625": [
+        {
+          "type": "coordinate",
+          "value": [
+            36.66896,
+            136.925129
+          ]
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135258898",
+    "label_en": "Daijingū Shrine",
+    "label_ja": "大神宮",
+    "description_en": "Shinto shrine in Nikko, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q235753"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135259667",
+    "label_en": null,
+    "label_ja": "鴨鳥神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1346925"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135260317",
+    "label_en": null,
+    "label_ja": "神舟神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q390792"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135288774",
+    "label_en": "Inashimono Shrine",
+    "label_ja": "伊那下神社",
+    "description_en": "The 1089th Shikinaisha",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1204017"
+        },
+        {
+          "type": "entity",
+          "value": "Q860928"
+        },
+        {
+          "type": "entity",
+          "value": "Q11642882"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q134917286"
+        },
+        {
+          "type": "entity",
+          "value": "Q135160342"
+        },
+        {
+          "type": "entity",
+          "value": "Q135038714"
+        },
+        {
+          "type": "entity",
+          "value": "Q135100459"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135425550",
+    "label_en": "Hachimangū",
+    "label_ja": "八幡宮",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q851492"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135433581",
+    "label_en": "Sugawara Shrine",
+    "label_ja": "菅原神社",
+    "description_en": "Shinto shrine in Wadomari, Japan",
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q1205996"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135434515",
+    "label_en": null,
+    "label_ja": "湯澤津神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q15720"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135459944",
+    "label_en": null,
+    "label_ja": "小布勢神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q499047"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135460920",
+    "label_en": "Suwa Shrine",
+    "label_ja": "諏訪社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q582289"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135462124",
+    "label_en": null,
+    "label_ja": "相頭神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q582289"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135463100",
+    "label_en": "Wakamiya Hachiman Shrine",
+    "label_ja": "若宮八幡神社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q601950"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        },
+        {
+          "type": "entity",
+          "value": "Q11390939"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  },
+  {
+    "qid": "Q135464206",
+    "label_en": "Shinmei-sha",
+    "label_ja": "神明社",
+    "description_en": null,
+    "sitelinks": 0,
+    "statements": {
+      "P17": [
+        {
+          "type": "entity",
+          "value": "Q17"
+        }
+      ],
+      "P131": [
+        {
+          "type": "entity",
+          "value": "Q850524"
+        }
+      ],
+      "P31": [
+        {
+          "type": "entity",
+          "value": "Q845945"
+        }
+      ]
+    },
+    "popularity_bucket": "tail"
+  }
+]

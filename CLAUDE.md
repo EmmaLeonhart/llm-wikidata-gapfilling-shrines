@@ -49,6 +49,41 @@ paper.
 5. **Findings & report.** Write `FINDINGS.md`; keep the themed `docs/` site and
    the PDF report current as results land.
 
+## Experimental design — target properties & popularity buckets (set in R3)
+
+**Population.** Wikidata Shinto shrines = instances of (`P31`) Shinto shrine
+`Q845945` or a subclass — **30,913** entities as of 2026-06-11.
+
+**Popularity buckets** (proxy = `wikibase:sitelinks`, the literature-backed
+prominence signal). Observed distribution: tail (0 sitelinks) ~76%, torso (1–5)
+~23%, head (6+) ~0.7%.
+- `head` = ≥6 sitelinks · `torso` = 1–5 · `tail` = 0.
+
+**Target property set** (the 7 held-out in eval instances):
+
+| PID | meaning | type | note |
+|-----|---------|------|------|
+| `P17`   | country | categorical | near-constant (Japan) → a precision *ceiling* / sanity check |
+| `P140`  | religion or worldview | categorical | near-constant (Shinto) → ceiling; head-only ground truth |
+| `P31`   | instance of | categorical | shrine subtype; spans all buckets |
+| `P131`  | located in admin territorial entity | categorical | harder; spans all buckets |
+| `P1435` | heritage designation | categorical | medium; head-concentrated |
+| `P571`  | inception | **date** | hard (prior: dates ~40% even for GPT-4); head-only ground truth |
+| `P625`  | coordinate location | **coordinate** | hard, exact; spans all buckets |
+
+**Ground-truth coverage is itself a finding** (from the 120-entity stratified
+sample, 505 instances): tail shrines are **statement-sparse** — only `P31`,
+`P17`, `P131`, and (partially) `P625` reach the tail. `P571`/`P1435`/`P140` are
+head-concentrated. So **the popularity gradient (H2) is only measurable for
+`P17`, `P31`, `P131`, `P625`**; for the date/heritage/religion properties we can
+only report head-bucket precision. Record this limitation in `FINDINGS.md`; do
+not silently present a head-only result as spanning the tail.
+
+**Eval data artifacts** (committed under `data_lake/`):
+`shrines_stratified.json` (120 entities, 40/bucket, `seed=0`, deterministic) and
+`eval_set.json` (505 held-out instances). Regenerate via
+`o1.wikidata.sample_shrines_stratified` + `o1.dataset.build_eval_set`.
+
 ## Architecture and Conventions
 
 - **`literature/`** — the literature review: source notes (one file per source,

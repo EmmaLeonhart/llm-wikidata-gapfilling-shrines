@@ -27,33 +27,18 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **Target-property set + held-out eval builder.** Fix the target property list
-   (candidates: `P17` country, `P131` admin location, `P140` religion, `P31`
-   instance-of, `P571` inception, `P625` coordinates, `P1435` heritage
-   designation — the R2 sample shows coverage of 60/60, 60/60, 32/60, 60/60,
-   47/60, 60/60, 51/60 respectively) and **document it in `CLAUDE.md`**.
-   `src/o1/dataset.py`: from the raw shrines, build eval instances = *(entity
-   context with the target property held out, the true held-out value)*,
-   stratified by property type and popularity bucket. Save
-   `data_lake/eval_set.json`. Tests cover the holdout + stratification logic.
-   **Refinement from R2:** the current `sample_shrines` orders by sitelinks DESC,
-   so it only returns *head* entities (20–68 sitelinks). To test the popularity
-   gradient (H2), extend sampling to draw **torso/tail** shrines too (low/zero
-   sitelinks) — e.g. a second SPARQL query without the DESC head bias, or random
-   offsets — so eval instances span the full head→tail range. Commit.
-
-2. **Predict-only pipeline.** `src/o1/predict.py`: given an instance's context,
+1. **Predict-only pipeline.** `src/o1/predict.py`: given an instance's context,
    prompt Claude to **propose a value or explicitly abstain**, with per-property
    templates; parse + normalize the answer (QID resolution / date / coordinate /
    string forms). **Inject the model client** so parsing/normalization is unit-
    tested with a fake client — no live API calls in tests. Commit.
 
-3. **Scoring + metrics.** `src/o1/score.py`: match predicted vs held-out value
+2. **Scoring + metrics.** `src/o1/score.py`: match predicted vs held-out value
    (QID / date / coordinate / fuzzy-label normalization), compute **precision,
    recall, and abstention rate per property type and per popularity bucket**.
    Tests on hand-built cases (exact match, near-miss, abstain). Commit.
 
-4. **First end-to-end predict-only run.** Wire `scripts/run.py` to: load
+3. **First end-to-end predict-only run.** Wire `scripts/run.py` to: load
    `eval_set` → run predict-only over a modest sample → score → write
    `results/predict_only.json` + a compact markdown table. **Needs
    `ANTHROPIC_API_KEY`** — if it is not set in the environment, this is a
