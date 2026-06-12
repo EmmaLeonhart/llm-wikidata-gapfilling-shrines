@@ -160,3 +160,16 @@ head-concentrated. So **H2 (popularity gradient) is only measurable for
 country / instance-of / admin-location / coordinates**; date/heritage/
 religion get head-bucket precision only. Logged as a limitation in
 `CLAUDE.md` to carry into `FINDINGS.md`.
+
+## 2026-06-11 — R4: predict-only pipeline
+
+`src/o1/predict.py` — per-property prompt builder (`build_prompt`),
+response parser (`parse_response`: ANSWER:/ABSTAIN, lenient fallback),
+typed normalizer (`normalize_answer`: year for P571, lat/lon for P625,
+label→QID via injected resolver for the 5 entity properties), and the
+pipeline (`predict_instance`, `predict_all`). Both the model **client** and
+the QID **resolver** are injected callables, so tests run fully offline.
+Real backends (`make_anthropic_client`, `wikidata_resolver`) are lazy and
+only built at run time (R6). An unparseable typed answer becomes an abstain
+but **keeps `raw_answer` for audit** — never silently dropped. Added
+`tests/test_predict.py` (10 tests). **26 tests pass.**
