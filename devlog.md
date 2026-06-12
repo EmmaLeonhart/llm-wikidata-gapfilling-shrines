@@ -119,4 +119,20 @@ all), `requirements.txt` (requests, anthropic, pytest), `pyproject.toml`
 install — sidesteps the known Documents/Github namespace-shadow quirk),
 `tests/test_smoke.py` (3 tests: version + entry point runs + rejects bad
 stage), and `.github/workflows/ci.yml` (pytest on push/PR). Updated the
-README quickstart. **3 tests pass locally**; CI confirmed below.
+README quickstart. **3 tests pass locally**; CI green (run 27394622997).
+
+## 2026-06-11 — R2: Wikidata SPARQL shrine sampler
+
+`src/o1/wikidata.py` — split into **pure parsers** (`parse_shrine_bindings`,
+`extract_snak_value`, `extract_claim_values`, `parse_entity`) and **thin
+network wrappers** (`run_sparql`, `fetch_entity_json`) with an injectable
+`getter` so the orchestrator `sample_shrines` runs offline in tests.
+`tests/test_wikidata.py` adds 5 tests (mock SPARQL + mock entity payload,
+incl. a fake-getter end-to-end run). **8 tests pass locally.**
+
+Ran a live sample of **60 shrines** → `data_lake/shrines_raw.json` (93 KB,
+committed). Target-property coverage: P17 60/60, P131 60/60, P31 60/60,
+P625 60/60, P571 47/60, P1435 51/60, P140 32/60. **Known limitation (carried
+to R3):** `sample_shrines` orders by sitelinks DESC, so this sample is
+head-only (20–68 sitelinks); the popularity gradient (H2) needs torso/tail
+sampling, noted in the R3 queue item.
