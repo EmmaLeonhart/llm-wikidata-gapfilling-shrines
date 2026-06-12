@@ -65,3 +65,13 @@ QA, not actionable per-property precision/recall of proposed statements
 for one curated domain, with vs without a verify pass. Reflected the
 one-line summary into `docs/index.html` pillar 2. literature/ committed as
 its own reviewable artifact.
+
+## 2026-06-11 — Bootstrap 5: todo.md long-horizon plan
+
+Wrote `todo.md` from the literature gap: four hypotheses (H1 property type
+dominates, H2 popularity gradient, H3 verification lifts precision
+unevenly, H4 confidence thresholding useful despite miscalibration), five
+build/experiment destinations (eval dataset → prediction pipeline →
+verification pipeline → scoring/analysis → honesty controls for
+contamination + ground-truth incompleteness), the report shape, and
+stretch horizons. Committed on its own.
