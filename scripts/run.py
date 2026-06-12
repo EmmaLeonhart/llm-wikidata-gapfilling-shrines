@@ -25,8 +25,23 @@ sys.path.insert(0, str(ROOT / "src"))
 
 DATA = ROOT / "data_lake"
 RESULTS = ROOT / "results"
-STAGES = ("sample", "build", "predict", "verify", "score", "figures", "all")
+STAGES = ("sample", "build", "predict", "verify", "score", "figures",
+          "compare", "all")
 DOCS = ROOT / "docs"
+
+# LLM backend (local Ollama). The canonical model drives the published report;
+# other models (O1_MODEL=...) write model-suffixed result files for comparison.
+CANONICAL_MODEL = "gemma3:12b"
+MODEL = os.environ.get("O1_MODEL", CANONICAL_MODEL)
+IS_CANONICAL = MODEL == CANONICAL_MODEL
+
+
+def _rp(name: str):
+    """Result-file path, suffixed by model for non-canonical runs."""
+    if IS_CANONICAL:
+        return RESULTS / f"{name}.json"
+    from o1.predict import model_tag
+    return RESULTS / f"{name}__{model_tag(MODEL)}.json"
 
 # Instances per target property in the bounded run sample (override: O1_PER_PROP).
 PER_PROPERTY = int(os.environ.get("O1_PER_PROP", "8"))
@@ -84,7 +99,7 @@ def stage_build():
 
 def _clients():
     from o1 import predict as pr
-    return pr.make_ollama_client(), pr.wikidata_resolver()
+    return pr.make_ollama_client(MODEL), pr.wikidata_resolver()
 
 
 def _run_sample(insts):
@@ -100,25 +115,27 @@ def stage_predict():
     insts = _load(DATA / "eval_set.json")
     sample = _run_sample(insts)
     client, resolver = _clients()
-    print(f"[predict] running predict-only over {len(sample)} instances (local Gemma)...")
+    print(f"[predict] predict-only over {len(sample)} instances ({MODEL})...")
     preds = pr.predict_all(sample, client, resolver=resolver)
-    _save({"sample_ids": [i["id"] for i in sample], "predictions": preds},
-          RESULTS / "predict_only.json")
-    print(f"[predict] {len(preds)} predictions -> results/predict_only.json")
+    out = _rp("predict_only")
+    _save({"model": MODEL, "sample_ids": [i["id"] for i in sample],
+           "predictions": preds}, out)
+    print(f"[predict] {len(preds)} predictions -> {os.path.relpath(out, ROOT)}")
     return sample, preds
 
 
 def stage_verify():
     from o1 import verify as vf
     insts = _load(DATA / "eval_set.json")
-    blob = _load(RESULTS / "predict_only.json")
+    blob = _load(_rp("predict_only"))
     ids = set(blob["sample_ids"])
     sample = [i for i in insts if i["id"] in ids]
     client, resolver = _clients()
-    print(f"[verify] verifying {len(blob['predictions'])} predictions (local Gemma)...")
+    print(f"[verify] verifying {len(blob['predictions'])} predictions ({MODEL})...")
     verified = vf.verify_all(sample, blob["predictions"], client, resolver=resolver)
-    _save({"sample_ids": list(ids), "predictions": verified}, RESULTS / "verify.json")
-    print(f"[verify] {len(verified)} verified -> results/verify.json")
+    out = _rp("verify")
+    _save({"model": MODEL, "sample_ids": list(ids), "predictions": verified}, out)
+    print(f"[verify] {len(verified)} verified -> {os.path.relpath(out, ROOT)}")
     return verified
 
 
@@ -144,18 +161,23 @@ def stage_score():
     from o1.wikidata import DEFAULT_TARGET_PROPERTIES
     insts = _load(DATA / "eval_set.json")
     by_id = {i["id"]: i for i in insts}
-    po = _load(RESULTS / "predict_only.json")
+    po = _load(_rp("predict_only"))
     sample = [by_id[i] for i in po["sample_ids"] if i in by_id]
-    result = {"n_sample": len(sample),
+    result = {"model": MODEL, "n_sample": len(sample),
               "predict_only": sc.score(po["predictions"], sample)}
     print("[score] computing hierarchy-lenient entity scores (Wikidata ancestors)...")
     result["predict_only_lenient_entity"] = lenient_entity_scores(po["predictions"], sample)
-    if (RESULTS / "verify.json").exists():
-        vv = _load(RESULTS / "verify.json")
+    if _rp("verify").exists():
+        vv = _load(_rp("verify"))
         result["verify"] = sc.score(vv["predictions"], sample)
-    _save(result, RESULTS / "scores.json")
-    _write_findings(result, DEFAULT_TARGET_PROPERTIES)
-    print(f"[score] metrics over {len(sample)} instances -> results/scores.json + FINDINGS.md")
+    _save(result, _rp("scores"))
+    # Only the canonical model drives the published FINDINGS.md.
+    if IS_CANONICAL:
+        _write_findings(result, DEFAULT_TARGET_PROPERTIES)
+        print(f"[score] {len(sample)} instances -> results/scores.json + FINDINGS.md")
+    else:
+        print(f"[score] {len(sample)} instances -> {os.path.relpath(_rp('scores'), ROOT)} "
+              f"(non-canonical model; FINDINGS.md unchanged)")
     return result
 
 
@@ -166,6 +188,49 @@ def stage_figures():
     for p in written:
         print(f"[figures] wrote {os.path.relpath(p, ROOT)}")
     return written
+
+
+def stage_compare():
+    """Write MODEL_COMPARISON.md: canonical (Gemma) vs O1_MODEL, per property."""
+    from o1.wikidata import DEFAULT_TARGET_PROPERTIES as L
+    if IS_CANONICAL:
+        print("[compare] set O1_MODEL to a non-canonical model to compare against Gemma")
+        return None
+    canon = _load(RESULTS / "scores.json")
+    alt = _load(_rp("scores"))
+    cp, ap = canon["predict_only"]["by_property"], alt["predict_only"]["by_property"]
+    pids = [p for p in ("P17", "P31", "P140", "P571", "P131", "P1435", "P625")
+            if p in cp or p in ap]
+    lines = [
+        "# Model comparison — does the finding generalize beyond Gemma?",
+        "",
+        f"Predict-only, same {canon.get('n_sample')}-instance bucket-stratified "
+        f"sample. **Canonical: `{CANONICAL_MODEL}`** vs **`{MODEL}`** "
+        "(both local via Ollama, temperature 0). Strict precision (n).",
+        "",
+        f"| property | `{CANONICAL_MODEL}` | `{MODEL}` |",
+        "|---|---|---|",
+    ]
+
+    def cell(by, pid):
+        m = by.get(pid)
+        return "—" if not m or m.get("precision") is None else f"{m['precision']:.2f} ({m['n']})"
+
+    for pid in pids:
+        lines.append(f"| {L.get(pid, pid)} (`{pid}`) | {cell(cp, pid)} | {cell(ap, pid)} |")
+    co, ao = canon["predict_only"]["overall"], alt["predict_only"]["overall"]
+    lines += [
+        f"| **overall** | {co['precision']:.2f} | {ao['precision']:.2f} |",
+        "",
+        "*Generated by `O1_MODEL=<model> python scripts/run.py compare`. "
+        "Numbers are strict (exact-QID) precision; the granularity caveat from "
+        "`FINDINGS.md` applies equally to both models.*",
+    ]
+    out = ROOT / "MODEL_COMPARISON.md"
+    with open(out, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines) + "\n")
+    print(f"[compare] wrote {os.path.relpath(out, ROOT)}")
+    return out
 
 
 def _write_findings(result, labels):
@@ -402,6 +467,8 @@ def main(argv):
         stage_score()
     elif stage == "figures":
         stage_figures()
+    elif stage == "compare":
+        stage_compare()
     elif stage == "all":
         stage_predict()
         stage_verify()
