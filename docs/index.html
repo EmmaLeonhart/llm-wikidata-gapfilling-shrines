@@ -230,6 +230,7 @@
   <tr><td>coordinates (P625)</td><td>18</td><td>&mdash;</td><td>0.00</td><td>1.00</td></tr>
   <tr><td><strong>overall</strong></td><td><strong>92</strong></td><td><strong>0.58</strong></td><td><strong>0.39</strong></td><td><strong>0.33</strong></td></tr>
 </table>
+<img src="fig_precision.png" alt="Predict-only precision and recall by property">
 <p>
   <strong>Self-verification hurt:</strong> predict-then-verify lowered overall
   precision 0.58&rarr;0.55 — consistent with prior findings that naive
@@ -237,6 +238,10 @@
   the four tail-covered properties, precision did <em>not</em> degrade head&rarr;tail
   (country and instance-of were flat or better on the tail) — these near-constant
   facts don't depend on entity-specific knowledge, so prominence doesn't help.
+</p>
+<img src="fig_verify_lift.png" alt="Predict-only vs predict-then-verify precision by property">
+<p style="text-align:center;color:var(--dim);font-size:0.85rem;margin-top:-0.5rem;">
+  Verify never raises precision and lowers it for instance-of and religion.
 </p>
 
 <h3>Most entity "failures" are granularity, not hallucination</h3>
@@ -263,6 +268,7 @@
   leniently: that one is genuine failure, not granularity.
   <small>Bounded, indicative sample (n=92), local Gemma; not a final result.</small>
 </p>
+<img src="fig_lenient.png" alt="Strict vs hierarchy-lenient precision for entity properties">
 
 <footer>
   <p>
