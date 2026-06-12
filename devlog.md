@@ -32,3 +32,19 @@ hourly cadence is now live for this session.
 
 No user-supplied files were dropped in — `data_lake/` holds only its
 `.gitkeep`. Nothing to triage; queue item deleted.
+
+## 2026-06-11 — Bootstrap 3: research question defined
+
+The user had no files and was open on topic, so the question was arrived
+at by proposing grounded options from a quick literature scan. Chosen:
+
+> **How reliably can an LLM fill missing factual statements in Wikidata for
+> a bounded, curated domain — Shinto shrines — and does an explicit
+> self-verification pass reduce the rate of wrong / hallucinated values?**
+
+Evaluation: hold out a known property value, prompt the model to predict
+it, measure precision/recall by property type, predict-only vs
+predict-then-verify. Scope, constraints, and success criteria written into
+`README.md`, `CLAUDE.md` (`> Research question` block), and
+`docs/index.html` (lede + question block + pillar 1). The topic fits the
+user's existing Wikidata/Shinto tooling, which supplies ground truth.
