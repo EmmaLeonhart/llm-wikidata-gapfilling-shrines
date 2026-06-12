@@ -27,16 +27,30 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **Figures.** Generate simple precision/recall-by-property and verify-lift
-   plots (matplotlib) into `docs/` (e.g. `docs/fig_precision.png`) and embed them
-   in the report site. Commit.
+1. **Honesty controls (todo item 5).** Two probes, written into a
+   `## Honesty controls` section (static prose) of the `FINDINGS.md` writer in
+   `scripts/run.py` so they survive regeneration:
+   (a) **Contamination** — the H2 result already bears on this: precision did
+   *not* fall on the no-Wikipedia tail (it was flat/better), which argues
+   *against* heavy memorization for these near-constant properties. State that,
+   and add a short `scripts/`-or-inline check correlating per-instance
+   correctness with `sitelinks>0` to back it numerically.
+   (b) **Ground-truth incompleteness** — audit ~6 entity-property answers scored
+   *wrong* against the live Wikidata/Wikipedia source and classify each as
+   true-hallucination vs granularity-mismatch vs Wikidata-gap (a correct fact
+   Wikidata lacks). Report the counts; precision is a lower bound by exactly the
+   Wikidata-gap share. Commit.
 
-When this section drains, refill from `todo.md` item 5 (honesty controls:
-contamination probe + ground-truth-incompleteness spot-check), then the final
-report polish. **Note from R9:** H2 (popularity gradient) was **not** observed
-for the testable near-constant properties — a stronger H2 test would need
-entity-specific properties with tail ground truth, which this domain's tail
-lacks; record that framing in the final report rather than re-running H2.
+2. **Conclusions + report polish.** Bake a `## Conclusions` section into the
+   `FINDINGS.md` writer that **answers the research question**: a decision table
+   of which shrine properties a local LLM can safely auto-suggest (country,
+   instance-of, religion — high precision, esp. granularity-aware), which to
+   leave (heritage, coordinates), and the headline that **self-verification
+   hurt**. Mirror the conclusions into `docs/index.html`; final consistency pass
+   on README/devlog. **Carry the R9 note:** frame H2's negative result honestly
+   (no gradient because the testable properties are near-constant; a real H2 test
+   needs entity-specific tail-covered properties this domain lacks) rather than
+   re-running it. Commit; confirm CI + Pages green.
 
 ---
 

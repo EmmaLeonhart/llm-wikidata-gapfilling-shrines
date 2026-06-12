@@ -282,3 +282,16 @@ head/torso/tail coverage for `P17`/`P31`/`P131`/`P625`). **50 tests pass.**
 
 Updated `FINDINGS.md` (auto), `docs/` report, README. R9 deleted from queue;
 only R10 (figures) remains before honesty controls + report polish.
+
+## 2026-06-12 — R10: report figures
+
+Added `src/o1/figures.py` (`make_figures`, headless Agg backend) generating
+three PNGs from `scores.json`: predict-only precision/recall by property,
+verify-lift (predict-only vs predict+verify precision), and strict vs
+hierarchy-lenient for entity properties. `run.py` gains a `figures` stage
+(also runs in `all`); `tests/test_figures.py` (+2 tests, write to tmp dir)
+keeps it offline-testable. Generated `docs/fig_precision.png`,
+`docs/fig_verify_lift.png`, `docs/fig_lenient.png` from the n=92 scores and
+embedded them in the report site. matplotlib added to requirements.
+**52 tests pass.** Refilled queue from `todo.md` item 5: R11 (honesty
+controls) + R12 (conclusions/report polish); mirrored to tasks. R10 deleted.

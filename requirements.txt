@@ -2,4 +2,5 @@
 # The LLM backend is LOCAL Gemma via Ollama (gemma3:12b at localhost:11434) —
 # no paid API, no SDK dependency. Ollama is driven over plain HTTP with requests.
 requests>=2.31        # Wikidata SPARQL + entity fetches + Ollama /api/generate
+matplotlib>=3.7       # report figures (scripts/run.py figures -> docs/*.png)
 pytest>=8.0           # test runner

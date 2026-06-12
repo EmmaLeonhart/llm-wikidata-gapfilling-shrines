@@ -25,7 +25,8 @@ sys.path.insert(0, str(ROOT / "src"))
 
 DATA = ROOT / "data_lake"
 RESULTS = ROOT / "results"
-STAGES = ("sample", "build", "predict", "verify", "score", "all")
+STAGES = ("sample", "build", "predict", "verify", "score", "figures", "all")
+DOCS = ROOT / "docs"
 
 # Instances per target property in the bounded run sample (override: O1_PER_PROP).
 PER_PROPERTY = int(os.environ.get("O1_PER_PROP", "8"))
@@ -156,6 +157,15 @@ def stage_score():
     _write_findings(result, DEFAULT_TARGET_PROPERTIES)
     print(f"[score] metrics over {len(sample)} instances -> results/scores.json + FINDINGS.md")
     return result
+
+
+def stage_figures():
+    from o1 import figures
+    scores = _load(RESULTS / "scores.json")
+    written = figures.make_figures(scores, str(DOCS))
+    for p in written:
+        print(f"[figures] wrote {os.path.relpath(p, ROOT)}")
+    return written
 
 
 def _write_findings(result, labels):
@@ -326,10 +336,13 @@ def main(argv):
         stage_verify()
     elif stage == "score":
         stage_score()
+    elif stage == "figures":
+        stage_figures()
     elif stage == "all":
         stage_predict()
         stage_verify()
         stage_score()
+        stage_figures()
     return 0
 
 
