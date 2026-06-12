@@ -18,5 +18,17 @@ See `CLAUDE.md` § "Workflow Rules" and `queue.md`'s preamble.
 
 ## 2026-06-11 — Project scaffolded
 
-Scaffolded with `cleanvibe new` (cleanvibe v1.13.1). Future entries
+Scaffolded with `cleanvibe research` (cleanvibe v1.13.1). Future entries
 land here as queue items get deleted.
+
+## 2026-06-11 — Bootstrap 1: three-cron playbook started
+
+Started the three session-local crons (`durable: false`, 7-day expiry):
+work-loop `3 * * * *` (job f95ee40c), auto-flush `15 * * * *` (job
+2e097cb4), status-report `42 * * * *` (job 2d3ecded). The autonomous
+hourly cadence is now live for this session.
+
+## 2026-06-11 — Bootstrap 2: data_lake triage (no-op)
+
+No user-supplied files were dropped in — `data_lake/` holds only its
+`.gitkeep`. Nothing to triage; queue item deleted.
