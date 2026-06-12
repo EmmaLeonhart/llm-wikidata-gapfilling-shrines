@@ -258,3 +258,27 @@ graceful degradation). **49 tests pass.**
 granularity). Reframes the headline: a local LLM is **highly reliable on
 categorical shrine facts** when credited at the right granularity. Updated
 `FINDINGS.md` + `docs/` report. R8 deleted from queue; R9/R10 remain.
+
+## 2026-06-12 — R9: scaled run (n=92) + popularity gradient
+
+Added `dataset.bucket_stratified_sample` (deterministic, up to N per
+(property, popularity bucket)) + a test; `run.py` uses it when
+`O1_PER_BUCKET` is set and writes a gradient table. Ran `all` with
+`O1_PER_BUCKET=6` → **92 held-out statements** on local Gemma (full
+head/torso/tail coverage for `P17`/`P31`/`P131`/`P625`). **50 tests pass.**
+
+**Results at n=92** (firmer than the n=42 first cut):
+- predict-only overall **precision 0.58 / recall 0.39**; country 0.94,
+  instance-of 0.83, religion 0.50; dates 86% abstain, coordinates 100% abstain.
+- **Self-verification hurt again** (0.58 → 0.55) — the backfire replicates.
+- **Hierarchy-lenient** (firmer): `P131` **0.00 → 0.62**, `P140` 0.50 → 1.00,
+  `P31` 0.83 → 1.00; `P1435` stays 0.00 (genuine failure).
+- **H2 NOT supported.** Popularity gradient for `P17`/`P31`: flat or *better*
+  on the tail (country tail 1.00 vs head 0.83). These near-constant facts
+  don't need entity-specific knowledge, so prominence doesn't help — reported
+  as a negative finding, not buried. A real H2 test needs entity-specific
+  properties with tail ground truth, which this domain lacks (noted in queue +
+  final report).
+
+Updated `FINDINGS.md` (auto), `docs/` report, README. R9 deleted from queue;
+only R10 (figures) remains before honesty controls + report polish.

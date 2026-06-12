@@ -43,11 +43,13 @@ The LLM backend is **local Gemma (`gemma3:12b`) via Ollama** (`localhost:11434`)
 — no paid API. `predict`/`verify` stages call it; `sample`/`build`/`score` are
 offline.
 
-**First findings** (bounded run, 42 held-out statements): predict-only Gemma
-fills *country* perfectly (1.00) and *instance-of* reasonably (0.67), abstains on
-most dates/coordinates, and a self-verification pass *lowered* overall precision
-(0.50→0.43). See [`FINDINGS.md`](FINDINGS.md) and the
-[report site](https://emmaleonhart.github.io/llm-wikidata-gapfilling-shrines/).
+**Findings** (bounded, popularity-stratified run, n=92): predict-only Gemma is
+reliable on categorical facts (country 0.94, instance-of 0.83 — both → 1.00 under
+granularity-aware scoring; 62% of admin-location answers are right at a coarser
+level), abstains appropriately on hard specifics (all coordinates, 86% of dates),
+a self-verification pass *lowered* precision (0.58→0.55), and there was *no*
+popularity gradient for the near-constant properties. See [`FINDINGS.md`](FINDINGS.md)
+and the [report site](https://emmaleonhart.github.io/llm-wikidata-gapfilling-shrines/).
 
 The research question is set and the literature review is in `literature/`.
 Active experiment steps live in `queue.md`; longer-horizon goals in `todo.md`.

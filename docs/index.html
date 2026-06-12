@@ -199,40 +199,44 @@
     </p>
   </div>
   <div class="pillar">
-    <h3>3 &middot; The finding (first bounded run)</h3>
+    <h3>3 &middot; The finding (n=92)</h3>
     <p>
-      Local Gemma fills <strong>country perfectly (1.00)</strong> and
-      <em>instance-of</em> reasonably (0.67), but abstains on most dates and all
-      coordinates. Overall predict-only precision was 0.50 / recall 0.33 on 42
-      held-out statements — and a self-verification pass <strong>lowered</strong>
-      precision (0.50&rarr;0.43), matching the literature's warning that naive
-      self-correction can backfire.
+      Local Gemma is <strong>reliable on categorical facts</strong> (country 0.94,
+      instance-of 0.83; both → 1.00 once you credit the right granularity) and
+      <strong>abstains appropriately</strong> on hard specifics (all coordinates,
+      86% of dates). A self-verification pass <strong>lowered</strong> precision
+      (0.58&rarr;0.55) — matching the literature's self-correction-backfire
+      caveat. Popularity showed <strong>no accuracy gradient</strong> for these
+      near-constant properties.
     </p>
   </div>
 </div>
 
-<h2 id="findings">Findings (first bounded run)</h2>
+<h2 id="findings">Findings (n=92)</h2>
 <p>
   Backend: <strong>local Gemma <code>gemma3:12b</code></strong> (Ollama,
-  temperature 0 — no paid API). A bounded sample of <strong>42 held-out
-  statements</strong> (~6 per property). Full detail and limitations in
+  temperature 0 — no paid API). A bounded, popularity-stratified sample of
+  <strong>92 held-out statements</strong>. Full detail and limitations in
   <a href="https://github.com/EmmaLeonhart/llm-wikidata-gapfilling-shrines/blob/main/FINDINGS.md"><code>FINDINGS.md</code></a>.
 </p>
 <table>
-  <tr><th>property</th><th>precision</th><th>recall</th><th>abstain</th></tr>
-  <tr><td>country (P17)</td><td>1.00</td><td>1.00</td><td>0.00</td></tr>
-  <tr><td>instance of (P31)</td><td>0.67</td><td>0.67</td><td>0.00</td></tr>
-  <tr><td>religion (P140)</td><td>0.50</td><td>0.50</td><td>0.00</td></tr>
-  <tr><td>inception date (P571)</td><td>1.00</td><td>0.17</td><td>0.83</td></tr>
-  <tr><td>admin location (P131)</td><td>0.00*</td><td>0.00*</td><td>0.00</td></tr>
-  <tr><td>heritage (P1435)</td><td>0.00</td><td>0.00</td><td>0.50</td></tr>
-  <tr><td>coordinates (P625)</td><td>&mdash;</td><td>0.00</td><td>1.00</td></tr>
-  <tr><td><strong>overall</strong></td><td><strong>0.50</strong></td><td><strong>0.33</strong></td><td><strong>0.33</strong></td></tr>
+  <tr><th>property</th><th>n</th><th>precision</th><th>recall</th><th>abstain</th></tr>
+  <tr><td>country (P17)</td><td>18</td><td>0.94</td><td>0.94</td><td>0.00</td></tr>
+  <tr><td>instance of (P31)</td><td>18</td><td>0.83</td><td>0.83</td><td>0.00</td></tr>
+  <tr><td>religion (P140)</td><td>6</td><td>0.50</td><td>0.50</td><td>0.00</td></tr>
+  <tr><td>inception date (P571)</td><td>7</td><td>1.00</td><td>0.14</td><td>0.86</td></tr>
+  <tr><td>admin location (P131)</td><td>18</td><td>0.00*</td><td>0.00*</td><td>0.11</td></tr>
+  <tr><td>heritage (P1435)</td><td>7</td><td>0.00</td><td>0.00</td><td>0.57</td></tr>
+  <tr><td>coordinates (P625)</td><td>18</td><td>&mdash;</td><td>0.00</td><td>1.00</td></tr>
+  <tr><td><strong>overall</strong></td><td><strong>92</strong></td><td><strong>0.58</strong></td><td><strong>0.39</strong></td><td><strong>0.33</strong></td></tr>
 </table>
 <p>
   <strong>Self-verification hurt:</strong> predict-then-verify lowered overall
-  precision 0.50&rarr;0.43 — consistent with prior findings that naive
-  self-correction can add errors.
+  precision 0.58&rarr;0.55 — consistent with prior findings that naive
+  self-correction can add errors. <strong>No popularity gradient:</strong> for
+  the four tail-covered properties, precision did <em>not</em> degrade head&rarr;tail
+  (country and instance-of were flat or better on the tail) — these near-constant
+  facts don't depend on entity-specific knowledge, so prominence doesn't help.
 </p>
 
 <h3>Most entity "failures" are granularity, not hallucination</h3>
@@ -246,17 +250,18 @@
 <table>
   <tr><th>property</th><th>strict precision</th><th>hierarchy-lenient</th></tr>
   <tr><td>religion (P140)</td><td>0.50</td><td><strong>1.00</strong></td></tr>
-  <tr><td>instance of (P31)</td><td>0.67</td><td><strong>1.00</strong></td></tr>
-  <tr><td>admin location (P131)</td><td>0.00</td><td><strong>0.33</strong></td></tr>
-  <tr><td>country (P17)</td><td>1.00</td><td>1.00</td></tr>
+  <tr><td>instance of (P31)</td><td>0.83</td><td><strong>1.00</strong></td></tr>
+  <tr><td>admin location (P131)</td><td>0.00</td><td><strong>0.62</strong></td></tr>
+  <tr><td>country (P17)</td><td>0.94</td><td>0.94</td></tr>
   <tr><td>heritage (P1435)</td><td>0.00</td><td>0.00</td></tr>
 </table>
 <p>
   So a local LLM is in fact <strong>highly reliable on categorical facts</strong>
   (it is essentially always right that a shrine is Shinto) — it just answers more
-  generally than Wikidata records. Heritage designation (P1435) stays at zero
-  even leniently: that one is genuine failure, not granularity.
-  <small>Small, indicative sample (n=42), local Gemma; not a final result.</small>
+  generally than Wikidata records. <strong>62%</strong> of admin-location answers
+  are correct at a coarser level. Heritage designation (P1435) stays at zero even
+  leniently: that one is genuine failure, not granularity.
+  <small>Bounded, indicative sample (n=92), local Gemma; not a final result.</small>
 </p>
 
 <footer>

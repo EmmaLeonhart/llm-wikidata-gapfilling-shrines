@@ -29,6 +29,11 @@ STAGES = ("sample", "build", "predict", "verify", "score", "all")
 
 # Instances per target property in the bounded run sample (override: O1_PER_PROP).
 PER_PROPERTY = int(os.environ.get("O1_PER_PROP", "8"))
+# If set, sample per (property, popularity bucket) instead — for the gradient (H2).
+PER_BUCKET = int(os.environ["O1_PER_BUCKET"]) if os.environ.get("O1_PER_BUCKET") else None
+
+# Properties whose ground truth reaches the tail (so the gradient is measurable).
+GRADIENT_PROPERTIES = ("P17", "P31", "P131", "P625")
 
 
 def _load(path: Path):
@@ -81,10 +86,18 @@ def _clients():
     return pr.make_ollama_client(), pr.wikidata_resolver()
 
 
+def _run_sample(insts):
+    """Select the bounded run sample — bucket-stratified if O1_PER_BUCKET is set."""
+    if PER_BUCKET is not None:
+        from o1 import dataset as ds
+        return ds.bucket_stratified_sample(insts, PER_BUCKET)
+    return bounded_sample(insts, PER_PROPERTY)
+
+
 def stage_predict():
     from o1 import predict as pr
     insts = _load(DATA / "eval_set.json")
-    sample = bounded_sample(insts, PER_PROPERTY)
+    sample = _run_sample(insts)
     client, resolver = _clients()
     print(f"[predict] running predict-only over {len(sample)} instances (local Gemma)...")
     preds = pr.predict_all(sample, client, resolver=resolver)
@@ -237,6 +250,32 @@ def _write_findings(result, labels):
             _lift_row("predict+verify", v["overall"]),
             "",
         ]
+    # Popularity gradient (H2) for the tail-covered properties.
+    pb = po.get("by_property_bucket", {})
+    grad_pids = [p for p in GRADIENT_PROPERTIES if p in pb]
+    if grad_pids:
+        lines += [
+            "## Popularity gradient (H2) — predict-only precision by bucket",
+            "",
+            "Only the four properties whose ground truth reaches the tail. "
+            "head = ≥6 sitelinks · torso = 1–5 · tail = 0. Cells show "
+            "precision (n).",
+            "",
+            "| property | head | torso | tail |",
+            "|---|---|---|---|",
+        ]
+        for pid in grad_pids:
+            buckets = pb[pid]
+
+            def cell(b):
+                m = buckets.get(b)
+                return "—" if not m else f"{_f(m['precision'])} ({m['n']})"
+
+            lines.append(
+                f"| {labels.get(pid, pid)} (`{pid}`) | "
+                f"{cell('head')} | {cell('torso')} | {cell('tail')} |"
+            )
+        lines.append("")
     lines += [
         "## Limitations (carried from the design)",
         "",
