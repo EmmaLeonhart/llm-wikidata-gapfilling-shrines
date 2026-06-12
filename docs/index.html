@@ -219,6 +219,24 @@
   <strong>92 held-out statements</strong>. Full detail and limitations in
   <a href="https://github.com/EmmaLeonhart/llm-wikidata-gapfilling-shrines/blob/main/FINDINGS.md"><code>FINDINGS.md</code></a>.
 </p>
+
+<div class="question">
+  <span class="kicker">Bottom line — which properties can a local LLM safely auto-suggest?</span>
+  <table style="margin-top:0.6rem;">
+    <tr><th>property</th><th>granularity-aware precision</th><th>verdict</th></tr>
+    <tr><td>country (P17)</td><td>0.94</td><td><strong>SAFE</strong></td></tr>
+    <tr><td>instance of (P31)</td><td>1.00</td><td><strong>SAFE</strong></td></tr>
+    <tr><td>religion (P140)</td><td>1.00</td><td><strong>SAFE</strong> ("Shinto", not the sect)</td></tr>
+    <tr><td>admin location (P131)</td><td>0.62</td><td><strong>PARTIAL</strong> — prefecture only</td></tr>
+    <tr><td>inception date (P571)</td><td>1.00 prec / 0.14 recall</td><td><strong>RARE</strong> — few but right</td></tr>
+    <tr><td>heritage (P1435)</td><td>0.00</td><td><strong>NO</strong> — genuine failure</td></tr>
+    <tr><td>coordinates (P625)</td><td>— (abstains)</td><td><strong>NO</strong> — declines</td></tr>
+  </table>
+  Useful for <strong>categorical facts</strong> at the right granularity;
+  <strong>abstains</strong> on hard specifics rather than hallucinating.
+  Self-verification <strong>hurt</strong>; popularity didn't matter; no
+  memorization signal.
+</div>
 <table>
   <tr><th>property</th><th>n</th><th>precision</th><th>recall</th><th>abstain</th></tr>
   <tr><td>country (P17)</td><td>18</td><td>0.94</td><td>0.94</td><td>0.00</td></tr>
