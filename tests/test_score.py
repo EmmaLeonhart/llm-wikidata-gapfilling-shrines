@@ -79,6 +79,38 @@ def test_score_aggregates_precision_recall_abstain():
     assert abs(out["overall"]["recall"] - 0.5) < 1e-9
 
 
+def test_match_entity_hierarchy_lenient():
+    # true value Q_city; model answered Q_pref (the prefecture above the city).
+    # ancestors(Q_city) = {Q_city, Q_pref, Q_japan}; ancestors(Q_pref) = {Q_pref, Q_japan}
+    anc = {
+        "Q_city": {"Q_city", "Q_pref", "Q_japan"},
+        "Q_pref": {"Q_pref", "Q_japan"},
+    }
+    ancestors = lambda q: anc.get(q, {q})
+    pred_general = {"value": "Q_pref"}
+    true = [{"value": "Q_city"}]
+    # strict: prefecture != city -> wrong
+    assert sc.match_entity(pred_general, true) is False
+    # lenient: prefecture is an ancestor of the city -> credited
+    assert sc.match_entity(pred_general, true, ancestors=ancestors) is True
+    # model more specific than truth is also credited
+    assert sc.match_entity({"value": "Q_city"}, [{"value": "Q_pref"}],
+                           ancestors=ancestors) is True
+    # genuinely unrelated entity stays wrong even when lenient
+    assert sc.match_entity({"value": "Q_other"}, true, ancestors=ancestors) is False
+
+
+def test_score_lenient_changes_entity_outcome():
+    instances = [{"id": "A", "true_values": [{"type": "entity", "value": "Q_city"}]}]
+    preds = [{"id": "A", "target_pid": "P131", "popularity_bucket": "head",
+              "abstain": False, "predicted": {"type": "entity", "value": "Q_pref"}}]
+    ancestors = lambda q: {"Q_city": {"Q_city", "Q_pref"}}.get(q, {q})
+    strict = sc.score(preds, instances)
+    lenient = sc.score(preds, instances, ancestors=ancestors)
+    assert strict["by_property"]["P131"]["correct"] == 0
+    assert lenient["by_property"]["P131"]["correct"] == 1
+
+
 def test_score_reports_unmatched_predictions():
     out = sc.score([{"id": "ghost", "target_pid": "P17",
                      "abstain": True, "predicted": None}], [])

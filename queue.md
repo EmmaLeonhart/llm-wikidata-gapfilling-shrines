@@ -27,25 +27,14 @@ planning-burst re-fill, so there is no kill/start front item — the pinned
 **delete each item in the same commit that completes it + append a dated
 `devlog.md` entry**, push, let CI run.
 
-1. **Audit + fix the entity-QID resolution artifact.** The first run shows
-   `P131` precision 0.00 and depressed `P140` — likely a measurement artifact:
-   a plausible place/label resolves via `wbsearchentities` to a *different* QID
-   than the one Wikidata records, scored as wrong. Write a small audit
-   (`scripts/audit_resolution.py` or a stage) over the **saved** `results/`
-   predictions: for each entity-property miss, show raw answer → resolved QID →
-   true QID(s) + their labels. Then make scoring fairer — e.g. resolve the true
-   QID's label and **also credit a normalized label match**, or report a
-   `raw-label precision` column alongside the QID precision. Offline (reuses saved
-   results); add tests for the new scoring path. Commit.
-
-2. **Scale the run + popularity gradient (H2).** Re-run with a larger bounded
+1. **Scale the run + popularity gradient (H2).** Re-run with a larger bounded
    sample (e.g. `O1_PER_PROP=20`) that **includes torso/tail** instances for the
    four tail-covered properties (`P17`/`P31`/`P131`/`P625`), and report
    precision/recall **by popularity bucket** for those (the `by_property_bucket`
    data is already computed — surface it in `FINDINGS.md` + `docs/`). Local Gemma,
    no API cost; budget the wall-clock. Commit refreshed `FINDINGS.md` + `docs/`.
 
-3. **Figures.** Generate simple precision/recall-by-property and verify-lift
+2. **Figures.** Generate simple precision/recall-by-property and verify-lift
    plots (matplotlib) into `docs/` (e.g. `docs/fig_precision.png`) and embed them
    in the report site. Commit.
 

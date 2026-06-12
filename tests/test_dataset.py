@@ -88,6 +88,26 @@ def test_stratified_sample_handles_small_bucket():
     assert len(out) == 3  # cannot exceed available
 
 
+def test_fetch_ancestors_parses_and_includes_self():
+    def fake_getter(url, params=None):
+        return {"results": {"bindings": [
+            {"a": {"value": "http://www.wikidata.org/entity/Q_city"}},
+            {"a": {"value": "http://www.wikidata.org/entity/Q_pref"}},
+        ]}}
+    anc = wd.fetch_ancestors("Q_city", "P131", getter=fake_getter)
+    assert anc == {"Q_city", "Q_pref"}
+    # property without a defined hierarchy path -> empty
+    assert wd.fetch_ancestors("Q1", "P571", getter=fake_getter) == set()
+
+
+def test_fetch_ancestors_degrades_gracefully_on_failure():
+    def boom(url, params=None):
+        raise RuntimeError("502 Bad Gateway")
+    # retries=0 to keep the test fast; must fall back to {qid}, not raise
+    anc = wd.fetch_ancestors("Q_city", "P131", getter=boom, retries=0)
+    assert anc == {"Q_city"}
+
+
 def test_parse_popularity_rows():
     sparql = {"results": {"bindings": [
         {"item": {"value": "http://www.wikidata.org/entity/Q5"},

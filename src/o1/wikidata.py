@@ -277,6 +277,68 @@ def sample_shrines_stratified(
     return entities
 
 
+# Upward-hierarchy property path per target property, for hierarchy-lenient
+# scoring: admin location climbs P131; class/religion climb P279 (subclass-of).
+ANCESTOR_PROPERTY_PATH: dict[str, str] = {
+    "P131": "wdt:P131*",
+    "P140": "wdt:P279*",
+    "P31": "wdt:P279*",
+    "P17": "wdt:P131*",
+    "P1435": "wdt:P279*",
+}
+
+_ANCESTORS_SPARQL = "SELECT ?a WHERE {{ wd:{qid} {path} ?a . }}"
+
+
+def fetch_ancestors(
+    qid: str,
+    target_pid: str,
+    getter: Callable[..., dict] = _get_json,
+    retries: int = 2,
+) -> set[str]:
+    """Upward-closure QIDs for ``qid`` along the property hierarchy for ``target_pid``.
+
+    Includes ``qid`` itself (the property paths use ``*``). Returns an empty set
+    for properties without a defined hierarchy.
+
+    **Resilient:** the public SPARQL endpoint returns transient 5xx errors; on
+    failure this retries with backoff and then **degrades gracefully** to
+    ``{qid}`` (i.e. fall back to strict matching for that entity) rather than
+    crashing the scoring stage. Callers can detect degradation: a real hierarchy
+    always contains more than just ``{qid}`` for a non-root entity.
+    """
+    path = ANCESTOR_PROPERTY_PATH.get(target_pid)
+    if not path:
+        return set()
+    for attempt in range(retries + 1):
+        try:
+            data = run_sparql(_ANCESTORS_SPARQL.format(qid=qid, path=path), getter=getter)
+            out: set[str] = {qid}
+            for b in data.get("results", {}).get("bindings", []):
+                uri = b.get("a", {}).get("value", "")
+                if uri:
+                    out.add(uri.rsplit("/", 1)[-1])
+            return out
+        except Exception:
+            if attempt < retries:
+                time.sleep(1.0 * (attempt + 1))
+    return {qid}  # degraded: endpoint unavailable -> behave like strict match
+
+
+def make_ancestor_lookup(
+    target_pid: str, getter: Callable[..., dict] = _get_json
+) -> Callable[[str], set[str]]:
+    """A memoized ``qid -> set[qid]`` ancestor lookup for one property."""
+    cache: dict[str, set[str]] = {}
+
+    def lookup(qid: str) -> set[str]:
+        if qid not in cache:
+            cache[qid] = fetch_ancestors(qid, target_pid, getter=getter)
+        return cache[qid]
+
+    return lookup
+
+
 def save_json(obj: Any, path: str) -> None:
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(obj, fh, ensure_ascii=False, indent=2)

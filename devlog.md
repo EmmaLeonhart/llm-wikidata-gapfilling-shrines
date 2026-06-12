@@ -232,3 +232,29 @@ next item (R8). Note: `results/` is gitignored (regenerable run output);
 Refilled the queue from `todo.md`: R8 (audit/fix the QID-resolution
 artifact), R9 (scale the run + popularity gradient H2), R10 (figures);
 mirrored to the task tool. R7 deleted from queue.
+
+## 2026-06-12 — R8: entity artifact is granularity, not hallucination
+
+Audited the saved entity-property predictions: the `P131`/`P140` zeros are
+**not** a resolver bug — they're a **granularity mismatch**. The model gives
+a *correct but coarser* answer (prefecture when Wikidata records the city;
+"Shinto" when it records a specific sect). Examples: Tomioka Hachiman →
+"Tokyo" vs recorded Kōtō ward; every shrine → "Shinto" (Q812767) while truth
+varies by sect.
+
+Added **hierarchy-lenient scoring**: `match_entity`/`match_value`/`classify`/
+`score` take an optional `ancestors(qid)->set` callable; a prediction is
+credited if it is an ancestor/descendant of the recorded entity.
+`wikidata.fetch_ancestors` (+`make_ancestor_lookup`) climbs `P131*`
+(location) or `P279*` (class/religion) via SPARQL, **memoized and resilient**
+— retries then degrades to `{qid}` on transient 5xx (a real 502 crashed the
+first attempt; fixed). `run.py` now reports strict-vs-lenient for entity
+properties. Added 4 tests (lenient match, lenient score, ancestor parse,
+graceful degradation). **49 tests pass.**
+
+**Result (n=42):** strict→lenient precision — `P140` religion **0.50→1.00**,
+`P31` instance-of **0.67→1.00**, `P131` admin-location **0.00→0.33**, `P17`
+**1.00→1.00**, `P1435` heritage **0.00→0.00** (genuine failure, not
+granularity). Reframes the headline: a local LLM is **highly reliable on
+categorical shrine facts** when credited at the right granularity. Updated
+`FINDINGS.md` + `docs/` report. R8 deleted from queue; R9/R10 remain.

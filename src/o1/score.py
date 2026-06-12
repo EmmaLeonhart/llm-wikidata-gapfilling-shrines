@@ -70,13 +70,39 @@ def match_coordinate(
     return False
 
 
-def match_entity(predicted: dict[str, Any], true_values: Iterable[dict[str, Any]]) -> bool:
+def match_entity(
+    predicted: dict[str, Any],
+    true_values: Iterable[dict[str, Any]],
+    ancestors: Optional[Any] = None,
+) -> bool:
+    """Match an entity prediction to ground truth.
+
+    Strict (``ancestors=None``): exact QID equality. A resolver that returned no
+    QID counts as wrong (conservative, precision-lowering; documented above).
+
+    Hierarchy-lenient (``ancestors`` is a callable ``qid -> set[qid]`` of upward
+    ancestors): also credit when the predicted entity is an **ancestor of** a true
+    entity (model answered correctly but more generally — e.g. prefecture instead
+    of the recorded city) or a true entity is an ancestor of the prediction (model
+    more specific). This separates "wrong" from "right at a different granularity".
+    """
     qid = predicted.get("value")
     if not qid:
-        # resolver returned no QID -> cannot confirm a match. Counts as wrong
-        # (a conservative, precision-lowering choice; documented above).
         return False
-    return any(tv.get("value") == qid for tv in true_values)
+    true_qids = {tv.get("value") for tv in true_values}
+    if qid in true_qids:
+        return True
+    if ancestors is None:
+        return False
+    pred_anc = ancestors(qid)
+    for t in true_qids:
+        if t is None:
+            continue
+        if t in pred_anc:          # true is an ancestor of prediction (more specific)
+            return True
+        if qid in ancestors(t):    # prediction is an ancestor of true (more general)
+            return True
+    return False
 
 
 def match_string(predicted: dict[str, Any], true_values: Iterable[dict[str, Any]]) -> bool:
@@ -89,6 +115,7 @@ def match_value(
     true_values: Iterable[dict[str, Any]],
     target_pid: str,
     coord_tol: float = COORD_TOLERANCE_DEG,
+    ancestors: Optional[Any] = None,
 ) -> bool:
     if predicted is None:
         return False
@@ -98,7 +125,7 @@ def match_value(
     if target_pid == "P625":
         return match_coordinate(predicted, true_values, tol=coord_tol)
     if predicted.get("type") == "entity":
-        return match_entity(predicted, true_values)
+        return match_entity(predicted, true_values, ancestors=ancestors)
     return match_string(predicted, true_values)
 
 
@@ -106,12 +133,14 @@ def classify(
     prediction: dict[str, Any],
     true_values: Iterable[dict[str, Any]],
     coord_tol: float = COORD_TOLERANCE_DEG,
+    ancestors: Optional[Any] = None,
 ) -> str:
     """Return 'abstain', 'correct', or 'wrong' for one prediction."""
     if prediction.get("abstain") or prediction.get("predicted") is None:
         return "abstain"
     ok = match_value(
-        prediction["predicted"], true_values, prediction["target_pid"], coord_tol
+        prediction["predicted"], true_values, prediction["target_pid"],
+        coord_tol, ancestors=ancestors,
     )
     return "correct" if ok else "wrong"
 
@@ -137,8 +166,14 @@ def score(
     predictions: Iterable[dict[str, Any]],
     instances: Iterable[dict[str, Any]],
     coord_tol: float = COORD_TOLERANCE_DEG,
+    ancestors: Optional[Any] = None,
 ) -> dict[str, Any]:
-    """Aggregate metrics overall, by property, and by property x popularity bucket."""
+    """Aggregate metrics overall, by property, and by property x popularity bucket.
+
+    If ``ancestors`` (a ``qid -> set[qid]`` callable) is given, entity matching is
+    hierarchy-lenient (see ``match_entity``) — used to report a lenient score
+    alongside the strict one.
+    """
     by_id = {inst["id"]: inst for inst in instances}
     overall: dict[str, int] = collections.Counter()
     by_prop: dict[str, dict[str, int]] = collections.defaultdict(collections.Counter)
@@ -151,7 +186,7 @@ def score(
         if inst is None:
             unmatched += 1
             continue
-        outcome = classify(pred, inst["true_values"], coord_tol)
+        outcome = classify(pred, inst["true_values"], coord_tol, ancestors=ancestors)
         pid = pred["target_pid"]
         bucket = pred.get("popularity_bucket") or inst.get("popularity_bucket")
         overall[outcome] += 1
