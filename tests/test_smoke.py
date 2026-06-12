@@ -16,14 +16,16 @@ def test_package_version():
     assert o1.__version__
 
 
-def test_run_entry_point_runs():
-    # The stub entry point should exit 0 on a known stage.
+def test_run_entry_point_usage_no_stage():
+    # Bare invocation prints usage and exits 0 without running any stage
+    # (so it stays offline-safe in CI — no network, no Ollama).
     result = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "run.py"), "all"],
+        [sys.executable, str(ROOT / "scripts" / "run.py")],
         capture_output=True,
         text=True,
     )
     assert result.returncode == 0, result.stderr
+    assert "usage" in result.stdout.lower()
 
 
 def test_run_entry_point_rejects_unknown_stage():

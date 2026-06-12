@@ -165,27 +165,54 @@ def predict_all(
 # Real client / resolver (constructed only at run time; not used in tests)
 # --------------------------------------------------------------------------
 
-def make_anthropic_client(model: str = "claude-haiku-4-5-20251001") -> ClientFn:
-    """Build a ``client(prompt) -> str`` backed by the Anthropic API.
+def make_ollama_client(
+    model: str = "gemma3:12b",
+    host: str = "http://localhost:11434",
+    num_predict: int = 200,
+    temperature: float = 0.0,
+) -> ClientFn:
+    """Build a ``client(prompt) -> str`` backed by **local Gemma via Ollama**.
 
-    Requires ``ANTHROPIC_API_KEY`` in the environment; imported lazily so the
-    dependency is only needed when actually running predictions.
+    The project runs entirely on a local model (no paid API). Requires Ollama
+    serving at ``host`` with ``model`` pulled (``ollama list``). ``requests`` is
+    imported lazily so offline tests need no network. ``temperature=0`` keeps
+    runs reproducible.
     """
-    import anthropic
-
-    sdk = anthropic.Anthropic()
+    import requests
 
     def client(prompt: str) -> str:
-        msg = sdk.messages.create(
-            model=model,
-            max_tokens=200,
-            messages=[{"role": "user", "content": prompt}],
+        r = requests.post(
+            f"{host}/api/generate",
+            json={
+                "model": model,
+                "prompt": prompt,
+                "stream": False,
+                "options": {"num_predict": num_predict, "temperature": temperature},
+            },
+            timeout=300,
         )
-        return "".join(
-            block.text for block in msg.content if getattr(block, "type", "") == "text"
-        )
+        r.raise_for_status()
+        return r.json().get("response", "")
 
     return client
+
+
+def pick_resolver_hit(hits: list[dict[str, Any]], query: str) -> Optional[str]:
+    """Choose the best QID from wbsearchentities hits.
+
+    Prefer a hit whose label or alias **exactly** matches the query (case-fold),
+    which avoids grabbing an unrelated sense that merely ranks first (e.g. a
+    "Shinto"-named item that isn't the religion). Fall back to the top hit.
+    """
+    if not hits:
+        return None
+    q = query.strip().casefold()
+    for h in hits:
+        if (h.get("label") or "").strip().casefold() == q:
+            return h.get("id")
+        if (h.get("match", {}).get("text") or "").strip().casefold() == q:
+            return h.get("id")
+    return hits[0].get("id")
 
 
 def wikidata_resolver(getter: Optional[Callable[..., dict]] = None) -> ResolverFn:
@@ -206,9 +233,8 @@ def wikidata_resolver(getter: Optional[Callable[..., dict]] = None) -> ResolverF
         data = g(
             "https://www.wikidata.org/w/api.php",
             {"action": "wbsearchentities", "search": label, "language": "en",
-             "format": "json", "limit": "1"},
+             "format": "json", "limit": "5"},
         )
-        hits = data.get("search", [])
-        return hits[0]["id"] if hits else None
+        return pick_resolver_hit(data.get("search", []), label)
 
     return resolve
