@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>404 — not found · o1</title>
+<meta name="description" content="That page doesn't exist on the o1 research site.">
+<style>
+  :root {
+    --bg: #f6f2ec;
+    --surface: #efe9df;
+    --card: #ece4d6;
+    --accent: #b8553a;
+    --accent-soft: #e9d5cc;
+    --text: #2d2a26;
+    --dim: #6e6a61;
+    --green: #5b7a4a;
+    --yellow: #a07a2b;
+    --blue: #3f6487;
+    --border: #d9d1c1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.75;
+    max-width: 880px; margin: 0 auto; padding: 2.5rem 1.5rem;
+    font-size: 16.5px;
+  }
+  h1 {
+    color: var(--text); font-size: 2.2rem; margin-bottom: 0.4rem;
+    font-weight: 700; letter-spacing: -0.01em;
+  }
+  p { margin-bottom: 1rem; }
+  a { color: var(--blue); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: var(--blue); }
+  .lede { color: var(--dim); font-size: 1.1rem; margin-top: 0.8rem; line-height: 1.65; }
+  .kicker {
+    display: block; font-size: 0.78rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--accent); font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .actions {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem; margin: 2rem 0 0.5rem;
+  }
+  .action {
+    display: block; background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.25rem 1.3rem; color: var(--text);
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .action:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .action .kicker {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--accent); font-weight: 700; margin-bottom: 0;
+  }
+  .action .title { font-size: 1.12rem; font-weight: 600; margin: 0.35rem 0 0.3rem; }
+  .action .desc { font-size: 0.9rem; color: var(--dim); line-height: 1.55; }
+  .action .arrow { color: var(--accent); font-weight: 700; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--border);
+    color: var(--dim); font-size: 0.85rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1d22;
+      --surface: #26282f;
+      --card: #2d3038;
+      --accent: #d97757;
+      --accent-soft: rgba(217,119,87,0.12);
+      --text: #e8e4dc;
+      --dim: #9a9589;
+      --green: #8ba87a;
+      --yellow: #c6a15e;
+      --blue: #85a8c4;
+      --border: #3a3d46;
+    }
+  }
+  @media (max-width: 600px) {
+    body { padding: 1.2rem; }
+    .actions { grid-template-columns: 1fr; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<span class="kicker">Error 404</span>
+<h1>This page isn't here.</h1>
+<p class="lede">
+  The address you followed doesn't match anything on the <strong>o1</strong>
+  research site. A link may be stale, or the path was mistyped. The findings
+  themselves are all on the home page.
+</p>
+
+<div class="actions">
+  <a class="action" href="./">
+    <div class="kicker">Go</div>
+    <div class="title">Home</div>
+    <div class="desc">
+      The project overview and research question. <span class="arrow">&larr;</span>
+    </div>
+  </a>
+  <a class="action" href="./#findings">
+    <div class="kicker">Read</div>
+    <div class="title">The findings</div>
+    <div class="desc">
+      Precision / recall by property type (n=92). <span class="arrow">&darr;</span>
+    </div>
+  </a>
+  <a class="action" href="./report.pdf">
+    <div class="kicker">Download</div>
+    <div class="title">The report (PDF)</div>
+    <div class="desc">
+      Full write-up, typeset. <span class="arrow">&darr;</span>
+    </div>
+  </a>
+</div>
+
+<footer>
+  <p>
+    <a href="./">o1</a> &middot; can an LLM reliably fill missing Wikidata
+    statements for Shinto shrines?
+  </p>
+</footer>
+
+</body>
+</html>
